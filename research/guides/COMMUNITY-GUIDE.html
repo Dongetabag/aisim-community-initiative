@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grow Your Own Food — Community Guide</title>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+--gold:#F5C242;--gold-dark:#C49A2A;--gold-light:#FDE68A;
+--bg:#0D0D0D;--bg2:#1A1A1A;--bg3:#252525;
+--green:#22C55E;--green-dark:#166534;--green-light:#BBF7D0;
+--blue:#3B82F6;--coral:#F97316;--red:#EF4444;
+--text:#F5F5F0;--text2:#A8A8A0;--text3:#6B6B65;
+}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden}
+
+.hero{background:linear-gradient(135deg,#0D1F0D 0%,#1A2E1A 40%,#0D0D0D 100%);padding:3rem 1.5rem;text-align:center;border-bottom:3px solid var(--gold);position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle at 30% 50%,rgba(34,197,94,.08) 0%,transparent 50%);pointer-events:none}
+.hero h1{font-family:'Oswald',sans-serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:var(--gold);margin-bottom:.5rem}
+.hero p{font-size:clamp(1rem,2.5vw,1.25rem);color:var(--text2);max-width:680px;margin:0 auto}
+.hero .badge{display:inline-block;background:var(--bg3);border:1px solid var(--gold-dark);border-radius:2rem;padding:.35rem 1rem;font-size:.8rem;color:var(--gold);margin-top:1rem;letter-spacing:.05em;text-transform:uppercase;font-family:'Oswald',sans-serif}
+
+.nav-strip{display:flex;gap:.5rem;padding:1rem 1.5rem;overflow-x:auto;background:var(--bg2);border-bottom:1px solid var(--bg3);position:sticky;top:0;z-index:100}
+.nav-btn{background:var(--bg3);border:1px solid transparent;color:var(--text2);padding:.5rem 1rem;border-radius:2rem;font-size:.85rem;cursor:pointer;white-space:nowrap;font-family:'Inter',sans-serif;transition:all .2s}
+.nav-btn:hover,.nav-btn.active{background:var(--gold);color:var(--bg);border-color:var(--gold);font-weight:600}
+
+.container{max-width:900px;margin:0 auto;padding:2rem 1.5rem}
+
+.section{margin-bottom:3rem;opacity:0;transform:translateY(20px);animation:fadeUp .6s ease forwards}
+@keyframes fadeUp{to{opacity:1;transform:translateY(0)}}
+.section:nth-child(2){animation-delay:.1s}
+.section:nth-child(3){animation-delay:.2s}
+
+.section-header{display:flex;align-items:center;gap:1rem;margin-bottom:1.5rem}
+.section-num{font-family:'Oswald',sans-serif;font-size:2.5rem;font-weight:700;color:var(--gold);line-height:1;min-width:3rem}
+.section-title{font-family:'Oswald',sans-serif;font-size:clamp(1.3rem,3vw,1.8rem);font-weight:600;text-transform:uppercase;letter-spacing:.03em}
+
+.card{background:var(--bg2);border:1px solid var(--bg3);border-radius:16px;padding:1.5rem;margin-bottom:1rem;transition:border-color .2s}
+.card:hover{border-color:var(--gold-dark)}
+
+.step-card{display:grid;grid-template-columns:56px 1fr;gap:1rem;align-items:start;padding:1.25rem}
+.step-icon{width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.5rem;font-weight:700;font-family:'Oswald',sans-serif;flex-shrink:0}
+.step-icon.green{background:rgba(34,197,94,.15);color:var(--green);border:2px solid rgba(34,197,94,.3)}
+.step-icon.gold{background:rgba(245,194,66,.15);color:var(--gold);border:2px solid rgba(245,194,66,.3)}
+.step-icon.blue{background:rgba(59,130,246,.15);color:var(--blue);border:2px solid rgba(59,130,246,.3)}
+.step-icon.coral{background:rgba(249,115,22,.15);color:var(--coral);border:2px solid rgba(249,115,22,.3)}
+.step-title{font-weight:600;font-size:1.1rem;margin-bottom:.35rem}
+.step-desc{color:var(--text2);font-size:1rem;line-height:1.7}
+
+.crop-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1rem}
+.crop-card{background:var(--bg2);border:1px solid var(--bg3);border-radius:16px;padding:1.25rem;position:relative;overflow:hidden}
+.crop-card::before{content:'';position:absolute;top:0;left:0;width:100%;height:4px;border-radius:16px 16px 0 0}
+.crop-card.priority-high::before{background:var(--coral)}
+.crop-card.priority-starter::before{background:var(--green)}
+.crop-card.priority-med::before{background:var(--gold)}
+.crop-name{font-family:'Oswald',sans-serif;font-size:1.3rem;font-weight:600;margin-bottom:.25rem}
+.crop-aka{color:var(--text3);font-size:.85rem;margin-bottom:.75rem;font-style:italic}
+.crop-stat{display:flex;justify-content:space-between;padding:.35rem 0;border-bottom:1px solid var(--bg3);font-size:.9rem}
+.crop-stat:last-child{border:none}
+.crop-stat .label{color:var(--text3)}
+.crop-stat .value{color:var(--text);font-weight:500}
+.crop-tag{display:inline-block;font-size:.7rem;padding:.2rem .6rem;border-radius:1rem;font-weight:600;text-transform:uppercase;letter-spacing:.05em;margin-top:.5rem}
+.tag-high{background:rgba(249,115,22,.15);color:var(--coral)}
+.tag-starter{background:rgba(34,197,94,.15);color:var(--green)}
+.tag-med{background:rgba(245,194,66,.15);color:var(--gold)}
+
+.budget-table{width:100%;border-collapse:separate;border-spacing:0;font-size:.95rem}
+.budget-table th{text-align:left;padding:.75rem 1rem;background:var(--bg3);color:var(--gold);font-family:'Oswald',sans-serif;font-weight:500;text-transform:uppercase;letter-spacing:.04em;font-size:.85rem}
+.budget-table th:first-child{border-radius:12px 0 0 0}
+.budget-table th:last-child{border-radius:0 12px 0 0;text-align:right}
+.budget-table td{padding:.65rem 1rem;border-bottom:1px solid var(--bg3)}
+.budget-table td:last-child{text-align:right;font-weight:600;color:var(--green)}
+.budget-table tr:last-child td{border-bottom:none}
+.budget-total{background:var(--bg3);border-radius:12px;padding:1rem 1.25rem;display:flex;justify-content:space-between;align-items:center;margin-top:1rem}
+.budget-total .label{font-family:'Oswald',sans-serif;font-size:1.1rem;text-transform:uppercase;color:var(--text2)}
+.budget-total .amount{font-family:'Oswald',sans-serif;font-size:1.8rem;color:var(--gold);font-weight:700}
+
+.timeline{position:relative;padding-left:2rem}
+.timeline::before{content:'';position:absolute;left:15px;top:0;bottom:0;width:2px;background:linear-gradient(to bottom,var(--green),var(--gold),var(--coral),var(--blue))}
+.timeline-item{position:relative;margin-bottom:2rem;padding-left:2rem}
+.timeline-dot{position:absolute;left:-2rem;top:.25rem;width:14px;height:14px;border-radius:50%;border:3px solid}
+.timeline-dot.phase1{border-color:var(--green);background:var(--bg)}
+.timeline-dot.phase2{border-color:var(--gold);background:var(--bg)}
+.timeline-dot.phase3{border-color:var(--coral);background:var(--bg)}
+.timeline-dot.phase4{border-color:var(--blue);background:var(--bg)}
+.timeline-phase{font-family:'Oswald',sans-serif;font-size:1rem;text-transform:uppercase;letter-spacing:.04em;margin-bottom:.25rem}
+.timeline-phase.p1{color:var(--green)}
+.timeline-phase.p2{color:var(--gold)}
+.timeline-phase.p3{color:var(--coral)}
+.timeline-phase.p4{color:var(--blue)}
+.timeline-title{font-weight:600;font-size:1.05rem;margin-bottom:.25rem}
+.timeline-desc{color:var(--text2);font-size:.95rem}
+
+.care-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:1rem}
+.care-card{background:var(--bg2);border:1px solid var(--bg3);border-radius:12px;padding:1rem;text-align:center}
+.care-freq{font-family:'Oswald',sans-serif;font-size:.85rem;text-transform:uppercase;letter-spacing:.06em;color:var(--gold);margin-bottom:.5rem}
+.care-task{font-size:.95rem;color:var(--text);line-height:1.5}
+
+.access-box{background:linear-gradient(135deg,rgba(34,197,94,.08),rgba(245,194,66,.08));border:1px solid rgba(245,194,66,.2);border-radius:16px;padding:2rem;margin-top:2rem}
+.access-box h3{font-family:'Oswald',sans-serif;font-size:1.4rem;color:var(--gold);margin-bottom:1rem;text-transform:uppercase}
+.access-list{list-style:none;padding:0}
+.access-list li{padding:.5rem 0;padding-left:1.5rem;position:relative;color:var(--text2);font-size:1rem;line-height:1.6}
+.access-list li::before{content:'';position:absolute;left:0;top:.85rem;width:8px;height:8px;border-radius:50%;background:var(--green)}
+
+.footer{text-align:center;padding:3rem 1.5rem;border-top:1px solid var(--bg3);margin-top:2rem}
+.footer-brand{font-family:'Oswald',sans-serif;font-size:1rem;color:var(--text3);text-transform:uppercase;letter-spacing:.1em}
+.footer-brand span{color:var(--gold)}
+
+@media print{
+body{background:#fff;color:#111}
+.nav-strip{display:none}
+.card,.crop-card,.care-card{border:1px solid #ddd;background:#fafafa}
+.hero{background:#f0f0f0;border-bottom:3px solid #C49A2A}
+.hero h1,.section-num{color:#B8860B}
+}
+</style>
+</head>
+<body>
+
+<div class="hero">
+<h1>Grow Your Own Food</h1>
+<p>A step-by-step guide for growing fresh herbs and greens indoors — designed for everyone, including elderly family and community members</p>
+<div class="badge">AISim Community Initiative — West Springfield, MA</div>
+</div>
+
+<div class="nav-strip">
+<button class="nav-btn active" onclick="scrollTo_('start')">Getting started</button>
+<button class="nav-btn" onclick="scrollTo_('crops')">What to grow</button>
+<button class="nav-btn" onclick="scrollTo_('budget')">Budget</button>
+<button class="nav-btn" onclick="scrollTo_('timeline')">Growth plan</button>
+<button class="nav-btn" onclick="scrollTo_('care')">Weekly care</button>
+<button class="nav-btn" onclick="scrollTo_('access')">Accessibility</button>
+</div>
+
+<div class="container">
+
+<!-- SECTION 1: GETTING STARTED -->
+<div class="section" id="start">
+<div class="section-header">
+<div class="section-num">01</div>
+<div class="section-title">Getting started — 5 easy steps</div>
+</div>
+
+<div class="card step-card">
+<div class="step-icon green">1</div>
+<div><div class="step-title">Pick a spot in your home</div>
+<div class="step-desc">You need a small corner — just 2 feet wide by 4 feet long. A spare room, basement, or large closet works perfectly. The space should have an electrical outlet nearby and stay between 65–80°F.</div></div>
+</div>
+
+<div class="card step-card">
+<div class="step-icon green">2</div>
+<div><div class="step-title">Get your DWC bucket system</div>
+<div class="step-desc">Deep Water Culture is the simplest system for beginners. Plants sit in small net pots filled with clay pebbles, and their roots hang in nutrient-rich water kept bubbly by an air pump — like a fish tank for plants. A 4-bucket kit costs $50–$80.</div></div>
+</div>
+
+<div class="card step-card">
+<div class="step-icon gold">3</div>
+<div><div class="step-title">Set up your grow light</div>
+<div class="step-desc">Plants need light to grow. The Spider Farmer SF2000 LED light ($140–$150) covers your whole setup. Hang it 18–24 inches above your plants. Set the timer to turn ON for 14 hours and OFF for 10 hours each day.</div></div>
+</div>
+
+<div class="card step-card">
+<div class="step-icon gold">4</div>
+<div><div class="step-title">Mix your nutrients + check pH</div>
+<div class="step-desc">Plants eat liquid nutrients instead of soil. Mix the Flora Trio (3 bottles) into your water following the label directions — about 2.5 mL of each per gallon. Then test your water's pH and adjust it to between 5.8–6.2. This is the most important number to watch.</div></div>
+</div>
+
+<div class="card step-card">
+<div class="step-icon blue">5</div>
+<div><div class="step-title">Plant your seeds and watch them grow</div>
+<div class="step-desc">Start with lettuce — it's the most forgiving crop and teaches you everything. Place seeds in small rockwool cubes or directly in net pots with clay pebbles. Your first harvest comes in about 30–45 days. Once you succeed with lettuce, add herbs and Caribbean greens.</div></div>
+</div>
+</div>
+
+<!-- SECTION 2: WHAT TO GROW -->
+<div class="section" id="crops">
+<div class="section-header">
+<div class="section-num">02</div>
+<div class="section-title">What to grow — Caribbean crops that thrive indoors</div>
+</div>
+
+<div class="crop-grid">
+
+<div class="crop-card priority-starter">
+<div class="crop-name">Lettuce</div>
+<div class="crop-aka">Buttercrunch, Romaine, Red Leaf</div>
+<div class="crop-stat"><span class="label">Days to harvest</span><span class="value">30–45 days</span></div>
+<div class="crop-stat"><span class="label">Difficulty</span><span class="value">Very easy</span></div>
+<div class="crop-stat"><span class="label">Harvests</span><span class="value">3–5 regrows per plant</span></div>
+<span class="crop-tag tag-starter">Start here</span>
+</div>
+
+<div class="crop-card priority-starter">
+<div class="crop-name">Basil</div>
+<div class="crop-aka">Genovese, Thai</div>
+<div class="crop-stat"><span class="label">Days to harvest</span><span class="value">28 days</span></div>
+<div class="crop-stat"><span class="label">Difficulty</span><span class="value">Easy</span></div>
+<div class="crop-stat"><span class="label">Harvests</span><span class="value">4–6 months continuous</span></div>
+<span class="crop-tag tag-starter">Start here</span>
+</div>
+
+<div class="crop-card priority-high">
+<div class="crop-name">Callaloo</div>
+<div class="crop-aka">Amaranth greens — Caribbean staple</div>
+<div class="crop-stat"><span class="label">Days to harvest</span><span class="value">20–45 days</span></div>
+<div class="crop-stat"><span class="label">Difficulty</span><span class="value">Easy–Medium</span></div>
+<div class="crop-stat"><span class="label">Harvests</span><span class="value">Up to 10 cuts in 90 days</span></div>
+<span class="crop-tag tag-high">Caribbean essential</span>
+</div>
+
+<div class="crop-card priority-high">
+<div class="crop-name">Culantro</div>
+<div class="crop-aka">Shadow beni, chadon beni, recao</div>
+<div class="crop-stat"><span class="label">Days to harvest</span><span class="value">~70 days</span></div>
+<div class="crop-stat"><span class="label">Difficulty</span><span class="value">Medium (slow start)</span></div>
+<div class="crop-stat"><span class="label">Special</span><span class="value">Prefers shade — saves electricity</span></div>
+<span class="crop-tag tag-high">Caribbean essential</span>
+</div>
+
+<div class="crop-card priority-high">
+<div class="crop-name">Thyme</div>
+<div class="crop-aka">Common thyme + Big leaf thyme (Cuban oregano)</div>
+<div class="crop-stat"><span class="label">Days to harvest</span><span class="value">30–60 days</span></div>
+<div class="crop-stat"><span class="label">Difficulty</span><span class="value">Easy</span></div>
+<div class="crop-stat"><span class="label">Bonus</span><span class="value">386% more yield than outdoor</span></div>
+<span class="crop-tag tag-high">Caribbean essential</span>
+</div>
+
+<div class="crop-card priority-med">
+<div class="crop-name">Scotch Bonnet</div>
+<div class="crop-aka">Hot pepper — essential for Caribbean cooking</div>
+<div class="crop-stat"><span class="label">Days to harvest</span><span class="value">90–150 days</span></div>
+<div class="crop-stat"><span class="label">Difficulty</span><span class="value">Medium (patience needed)</span></div>
+<div class="crop-stat"><span class="label">Yield</span><span class="value">20–50+ peppers per plant</span></div>
+<span class="crop-tag tag-med">Start seeds early</span>
+</div>
+
+<div class="crop-card priority-starter">
+<div class="crop-name">Green Onions</div>
+<div class="crop-aka">Scallions — regrow from base</div>
+<div class="crop-stat"><span class="label">Days to harvest</span><span class="value">21–28 days</span></div>
+<div class="crop-stat"><span class="label">Difficulty</span><span class="value">Very easy</span></div>
+<div class="crop-stat"><span class="label">Bonus</span><span class="value">Regrows after every cut</span></div>
+<span class="crop-tag tag-starter">Start here</span>
+</div>
+
+<div class="crop-card priority-med">
+<div class="crop-name">Lemongrass</div>
+<div class="crop-aka">Start from grocery store stalks</div>
+<div class="crop-stat"><span class="label">Days to harvest</span><span class="value">60–90 days</span></div>
+<div class="crop-stat"><span class="label">Difficulty</span><span class="value">Easy</span></div>
+<div class="crop-stat"><span class="label">Bonus</span><span class="value">92% more than soil-grown</span></div>
+<span class="crop-tag tag-med">Great addition</span>
+</div>
+
+</div>
+</div>
+
+<!-- SECTION 3: BUDGET -->
+<div class="section" id="budget">
+<div class="section-header">
+<div class="section-num">03</div>
+<div class="section-title">Full budget — everything you need under $500</div>
+</div>
+
+<div class="card" style="padding:0;overflow:hidden;border-radius:16px">
+<table class="budget-table">
+<thead><tr><th>Item</th><th>Cost</th></tr></thead>
+<tbody>
+<tr><td>4-bucket DWC system (VIVOSUN or DIY)</td><td>$50–$80</td></tr>
+<tr><td>Spider Farmer SF2000 LED light (200W)</td><td>$140–$150</td></tr>
+<tr><td>GH Flora Trio nutrients (3 bottles)</td><td>$30–$40</td></tr>
+<tr><td>pH meter + TDS meter (VIVOSUN combo)</td><td>$12–$20</td></tr>
+<tr><td>pH Up/Down solutions</td><td>$12–$18</td></tr>
+<tr><td>LECA clay pebbles (10L bag)</td><td>$15–$20</td></tr>
+<tr><td>Seeds (lettuce, basil, callaloo, culantro, scotch bonnet, thyme)</td><td>$15–$25</td></tr>
+<tr><td>Light timer</td><td>$8–$12</td></tr>
+<tr><td>Air pump + air stones + tubing</td><td>$33–$48</td></tr>
+<tr><td>Clip fan for air circulation</td><td>$15–$20</td></tr>
+<tr><td>Misc (measuring cups, spray bottle, labels)</td><td>$10–$15</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="budget-total">
+<div class="label">Total startup cost</div>
+<div class="amount">$345 – $456</div>
+</div>
+
+<div class="card" style="margin-top:1rem;background:rgba(34,197,94,.06);border-color:rgba(34,197,94,.15)">
+<div style="font-weight:600;color:var(--green);margin-bottom:.35rem">Monthly operating cost: ~$42–$50</div>
+<div style="color:var(--text2);font-size:.95rem">Electricity ($31/mo at Eversource rates) + nutrients, seeds, pH solutions ($11–19/mo)</div>
+</div>
+
+<div class="card" style="margin-top:.75rem;background:rgba(245,194,66,.06);border-color:rgba(245,194,66,.15)">
+<div style="font-weight:600;color:var(--gold);margin-bottom:.35rem">Even cheaper option: Kratky shelf system — ~$200</div>
+<div style="color:var(--text2);font-size:.95rem">Wire shelf ($40) + LED strip lights ($50) + mason jars with net pot lids ($30) + supplies ($80). No pump needed — the simplest possible system for herbs and greens.</div>
+</div>
+</div>
+
+<!-- SECTION 4: GROWTH TIMELINE -->
+<div class="section" id="timeline">
+<div class="section-header">
+<div class="section-num">04</div>
+<div class="section-title">Growth plan — start small, scale smart</div>
+</div>
+
+<div class="timeline">
+
+<div class="timeline-item">
+<div class="timeline-dot phase1"></div>
+<div class="timeline-phase p1">Phase 1 — Months 1–2</div>
+<div class="timeline-title">Learn the basics ($345–$456)</div>
+<div class="timeline-desc">Set up your 4-bucket DWC. Grow lettuce and basil to learn pH management, nutrient mixing, and harvest timing. Expect 1–2 pounds of greens per week. Start scotch bonnet seeds now — they take 3–4 months before producing fruit.</div>
+</div>
+
+<div class="timeline-item">
+<div class="timeline-dot phase2"></div>
+<div class="timeline-phase p2">Phase 2 — Months 3–6</div>
+<div class="timeline-title">Add Caribbean crops (+$200–$400)</div>
+<div class="timeline-desc">Add a second system and light. Expand to 20–40 plant sites producing 3–5 lbs/week. Grow callaloo, culantro, thyme, and green onions. Your scotch bonnet plants should begin fruiting.</div>
+</div>
+
+<div class="timeline-item">
+<div class="timeline-dot phase3"></div>
+<div class="timeline-phase p3">Phase 3 — Months 6–12</div>
+<div class="timeline-title">Catering supply scale (+$500–$2,000)</div>
+<div class="timeline-desc">Scale to 50–100+ plant sites across multiple systems. Produce 10–20 lbs/week of herbs and greens plus a steady pepper harvest. This is where production becomes meaningful for Pan Road Catering.</div>
+</div>
+
+<div class="timeline-item">
+<div class="timeline-dot phase4"></div>
+<div class="timeline-phase p4">Phase 4 — 12+ months</div>
+<div class="timeline-title">Community expansion</div>
+<div class="timeline-desc">Help family and community members set up their own systems. Create a network of indoor growers across West Springfield. Share harvests, trade knowledge, and build food independence together.</div>
+</div>
+
+</div>
+</div>
+
+<!-- SECTION 5: WEEKLY CARE -->
+<div class="section" id="care">
+<div class="section-header">
+<div class="section-num">05</div>
+<div class="section-title">Simple care schedule — just minutes a day</div>
+</div>
+
+<div class="care-grid">
+
+<div class="care-card">
+<div class="care-freq">Every day</div>
+<div class="care-task">Check water level<br>Test pH (5.8–6.2)<br>Quick look at plants</div>
+</div>
+
+<div class="care-card">
+<div class="care-freq">Every week</div>
+<div class="care-task">Measure nutrient strength<br>Check roots (white = healthy)<br>Harvest what's ready</div>
+</div>
+
+<div class="care-card">
+<div class="care-freq">Every 2 weeks</div>
+<div class="care-task">Change all nutrient water<br>Clean the buckets<br>Trim tangled roots</div>
+</div>
+
+<div class="care-card">
+<div class="care-freq">Every month</div>
+<div class="care-task">Calibrate pH meter<br>Check air stones<br>Restock supplies</div>
+</div>
+
+</div>
+
+<div class="card" style="margin-top:1.5rem">
+<div style="font-weight:600;font-size:1.05rem;margin-bottom:.75rem">The #1 rule: Always check pH</div>
+<div style="color:var(--text2);font-size:.95rem;line-height:1.7">
+If your water's pH is outside the 5.5–6.5 range, plants cannot eat — no matter how much nutrient you add. Test daily with your digital meter. Add nutrients FIRST, stir, then adjust pH. A few drops of pH Down at a time. This one habit prevents 90% of hydroponic problems.
+</div>
+</div>
+</div>
+
+<!-- SECTION 6: ACCESSIBILITY -->
+<div class="section" id="access">
+<div class="section-header">
+<div class="section-num">06</div>
+<div class="section-title">Made for everyone — accessibility adaptations</div>
+</div>
+
+<div class="access-box">
+<h3>Designed for elderly family and people with disabilities</h3>
+<ul class="access-list">
+<li><strong>Waist-height setup:</strong> Place buckets on a table or cart at 30–36 inches — no bending or kneeling required. Wheelchair accessible.</li>
+<li><strong>Rolling cart option:</strong> Put the whole system on wheels ($20–30) so it comes to you, not the other way around.</li>
+<li><strong>Smaller buckets:</strong> Use 3.5-gallon instead of 5-gallon — weighs 29 lbs full instead of 42 lbs.</li>
+<li><strong>Large-print labels:</strong> Color-code everything — green buckets for greens, red for peppers, blue for herbs.</li>
+<li><strong>Easy-grip tools:</strong> Spring-loaded pruning shears and large syringes for nutrient measuring. No tiny droppers.</li>
+<li><strong>Pre-mixed nutrients:</strong> Mix a week's worth at once in a gallon jug. Just pour when needed.</li>
+<li><strong>Simplest system (Kratky):</strong> No pump, no moving parts, no daily maintenance. Fill the jar, place the plant, check once a week. Under $5 per plant.</li>
+<li><strong>Grow buddy system:</strong> Pair each grower with a helper for monthly deep-cleans and troubleshooting. Nobody grows alone.</li>
+</ul>
+</div>
+</div>
+
+</div>
+
+<div class="footer">
+<div class="footer-brand"><span>AISim</span> Hydroponics Initiative</div>
+<div style="color:var(--text3);font-size:.85rem;margin-top:.5rem">Recipe Labs / Eleven Views / Simeon Reid Jr. — West Springfield, MA</div>
+<div style="color:var(--text3);font-size:.8rem;margin-top:.25rem">Designed for community food independence</div>
+</div>
+
+<script>
+function scrollTo_(id){
+document.getElementById(id).scrollIntoView({behavior:'smooth',block:'start'});
+document.querySelectorAll('.nav-btn').forEach(b=>b.classList.remove('active'));
+event.target.classList.add('active');
+}
+const observer=new IntersectionObserver(entries=>{
+entries.forEach(e=>{if(e.isIntersecting){e.target.style.animationPlayState='running'}});
+},{threshold:0.1});
+document.querySelectorAll('.section').forEach(s=>observer.observe(s));
+</script>
+
+</body>
+</html>

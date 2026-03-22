@@ -1,50 +1,36 @@
-# AISIM Community Initiative — West Springfield, MA
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-**Grow Your Own Food** — A step-by-step guide to growing fresh herbs and greens indoors, designed for everyone including elderly family and community members.
+## Getting Started
 
-## Mission
+First, run the development server:
 
-Empower families and community members in West Springfield to grow their own food using affordable indoor hydroponic systems. Designed with accessibility at the core — large text, high contrast, multilingual support, and adaptive setups for elderly and disabled growers.
-
-## What This Project Builds
-
-- **Printable PDF Guide** — Community handout for elderly/family members
-- **Interactive Web App** — React/Next.js deployed on Vercel
-- **Visual Carousel** — IG/TikTok-friendly slide deck for outreach
-
-## Key Features
-
-- Deep Water Culture (DWC) bucket system — simplest, most affordable
-- Caribbean crop focus: callaloo, culantro, scotch bonnet, thyme
-- Budget: Under $500 starter setup
-- Phased scaling: hobby → family supply → Pan Road Catering integration
-- Accessibility-first: large fonts, screen reader support, grow buddy system
-
-## Project Structure
-
-```
-src/
-├── components/     # Reusable UI components
-├── pages/          # App pages/routes
-├── styles/         # CSS/styling
-├── assets/         # Images, icons
-public/             # Static files
-docs/               # Documentation
-research/           # Research briefs and data
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
 ```
 
-## Part of the AISIM Ecosystem
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-- **aisim-ops** — Central operations hub (research docs live here)
-- **aisim-community-initiative** — This repo (shareable digital guides)
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-## Tech Stack
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-- Next.js / React
-- Tailwind CSS
-- Vercel deployment
-- Accessible design patterns (WCAG 2.1 AA)
+## Learn More
 
----
+To learn more about Next.js, take a look at the following resources:
 
-*AISIM Community Initiative — Growing food, growing community.*
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+
+## Deploy on Vercel
+
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.

@@ -1,0 +1,1014 @@
+{
+  "project": {
+    "name": "AISim Hydroponics Initiative — Community Growing Guide",
+    "version": "1.0",
+    "date": "2026-03-22",
+    "repo": "github.com/Dongetabag/aisim-ops",
+    "path": "docs/projects/hydroponics-initiative/",
+    "owner": "Simeon Reid Jr. — Recipe Labs / Eleven Views / AISim"
+  },
+
+  "deliverables": [
+    {
+      "id": "web-app",
+      "type": "Interactive React/Next.js Web App",
+      "deployment": "Vercel (team_pQXQ7ltid5WUMhNRynldMQJm)",
+      "framework": "Next.js 14+ with App Router",
+      "description": "Step-by-step interactive growing guide with crop planner, cost calculator, pH tracker, and maintenance reminders. PWA-enabled for offline use.",
+      "priority": 1
+    },
+    {
+      "id": "pdf-guide",
+      "type": "Printable PDF Community Handout",
+      "format": "8.5x11 letter, 8-12 pages",
+      "description": "Large-text, high-contrast printed guide for elderly family and community members. Simple language, numbered steps, big diagrams.",
+      "priority": 2
+    },
+    {
+      "id": "carousel",
+      "type": "Visual Slide Deck / Social Carousel",
+      "format": "1080x1920px (9:16 vertical) — 8-12 slides per series",
+      "platforms": ["Instagram Reels/Carousel", "TikTok", "YouTube Shorts"],
+      "description": "Bold visual cards with one concept per slide. For RichOff AI content brand.",
+      "priority": 3
+    }
+  ],
+
+  "audience": {
+    "primary": "Family first — elderly, people with disabilities, kids",
+    "secondary": "West Springfield / Springfield MA community",
+    "tertiary": "Social media audience via RichOff AI",
+    "reading_level": "6th grade (Flesch-Kincaid)",
+    "languages": ["English", "Spanish", "Haitian Creole"],
+    "age_range": "8-85+",
+    "tech_comfort": "Low — assume smartphone-only, no desktop",
+    "accessibility_requirements": [
+      "WCAG 2.2 AA compliant",
+      "Screen reader compatible",
+      "Keyboard navigable",
+      "Touch targets 44x44px minimum",
+      "Reduced motion support",
+      "Offline capable (PWA)"
+    ]
+  },
+
+  "brand": {
+    "name": "AISim",
+    "theme": "dark",
+    "colors": {
+      "background_primary": "#0D0D0D",
+      "background_secondary": "#1A1A1A",
+      "background_tertiary": "#252525",
+      "gold": "#F5C242",
+      "gold_dark": "#C49A2A",
+      "gold_light": "#FDE68A",
+      "green": "#22C55E",
+      "green_dark": "#166534",
+      "green_light": "#BBF7D0",
+      "blue": "#3B82F6",
+      "coral": "#F97316",
+      "red": "#EF4444",
+      "text_primary": "#F5F5F0",
+      "text_secondary": "#A8A8A0",
+      "text_muted": "#6B6B65"
+    },
+    "typography": {
+      "heading": "Oswald (Google Fonts) — 600/700 weight, uppercase, 0.04em letter-spacing",
+      "body": "Inter (Google Fonts) — 400/500 weight",
+      "mono": "JetBrains Mono (for data/numbers)"
+    },
+    "print_override": {
+      "note": "PDF uses LIGHT theme for print readability",
+      "background": "#FFFFFF",
+      "text": "#1A1A1A",
+      "accent": "#B8860B",
+      "heading_font": "Oswald — dark gold on white",
+      "body_font": "Inter — black on white",
+      "min_body_size": "14pt",
+      "min_heading_size": "22pt"
+    },
+    "carousel_override": {
+      "note": "Social slides use HIGH CONTRAST dark theme",
+      "background": "#0D0D0D",
+      "text": "#FFFFFF",
+      "accent": "#F5C242",
+      "max_words_per_slide": 25,
+      "font_size_min": "48px for body, 72px for headings"
+    }
+  },
+
+  "crop_data": [
+    {
+      "id": "lettuce",
+      "name": "Lettuce",
+      "varieties": ["Buttercrunch", "Romaine", "Red Leaf", "Bibb"],
+      "category": "starter",
+      "caribbean_relevance": false,
+      "priority": "starter",
+      "priority_color": "#22C55E",
+      "germination_days": [3, 7],
+      "harvest_days": [30, 45],
+      "regrows": [3, 5],
+      "yield_per_plant_oz": [5, 6],
+      "yield_per_sqft_month_oz": [8, 12],
+      "ph_range": [5.5, 6.5],
+      "ph_optimal": 6.0,
+      "ec_range": [1.2, 1.8],
+      "temp_f": [60, 75],
+      "temp_optimal_f": 68,
+      "ppfd": [150, 250],
+      "dli": [12, 17],
+      "light_hours": 14,
+      "water_ml_per_day": [250, 500],
+      "difficulty": "Very Easy",
+      "difficulty_score": 1,
+      "best_systems": ["DWC", "NFT", "Kratky", "Ebb-Flow", "Vertical"],
+      "common_pests": ["Aphids", "Fungus gnats"],
+      "common_diseases": ["Tip burn (calcium)", "Bolting (heat)"],
+      "companions": ["Basil", "Green onions", "Herbs"],
+      "grocery_price_per_lb": [2.50, 4.00],
+      "hydro_cost_per_lb": [1.00, 2.00],
+      "notes": "Best first crop — most forgiving. Harvest outer leaves for continuous production.",
+      "visual_stages": [
+        {"stage": "Seed", "day": 0, "description": "Tiny dark seeds placed in rockwool cube or net pot"},
+        {"stage": "Sprout", "day": 5, "description": "First two small round leaves (cotyledons) emerge"},
+        {"stage": "Seedling", "day": 14, "description": "True leaves develop, 2-3 inches tall"},
+        {"stage": "Vegetative", "day": 25, "description": "Full rosette forming, leaves spreading out"},
+        {"stage": "Harvest", "day": 35, "description": "Full head, outer leaves ready to pick"}
+      ]
+    },
+    {
+      "id": "basil",
+      "name": "Basil",
+      "varieties": ["Genovese", "Thai", "Sweet"],
+      "category": "starter",
+      "caribbean_relevance": true,
+      "priority": "starter",
+      "priority_color": "#22C55E",
+      "germination_days": [5, 10],
+      "harvest_days": [28, 35],
+      "regrows_months": [4, 6],
+      "yield_per_plant_oz": [3, 5],
+      "yield_per_sqft_month_oz": [6, 10],
+      "ph_range": [5.5, 6.5],
+      "ph_optimal": 6.0,
+      "ec_range": [1.0, 1.6],
+      "temp_f": [65, 85],
+      "temp_optimal_f": 75,
+      "ppfd": [200, 300],
+      "dli": [14, 18],
+      "light_hours": 16,
+      "water_ml_per_day": [300, 600],
+      "difficulty": "Easy",
+      "difficulty_score": 2,
+      "best_systems": ["DWC", "NFT", "Kratky"],
+      "common_pests": ["Aphids", "Spider mites"],
+      "common_diseases": ["Downy mildew", "Fusarium wilt"],
+      "companions": ["Lettuce", "Tomatoes"],
+      "grocery_price_per_lb": [6.00, 12.00],
+      "hydro_cost_per_lb": [2.00, 4.00],
+      "notes": "Pinch above leaf nodes for bushy growth. Enormous cost savings vs grocery.",
+      "visual_stages": [
+        {"stage": "Seed", "day": 0, "description": "Small black seeds, may form gel coating when wet"},
+        {"stage": "Sprout", "day": 7, "description": "Cotyledons emerge, stem visible"},
+        {"stage": "Seedling", "day": 14, "description": "First true leaves — classic basil shape"},
+        {"stage": "Bushy", "day": 28, "description": "Multiple branches after first pinch"},
+        {"stage": "Harvest", "day": 35, "description": "Regular pinching produces continuous harvest"}
+      ]
+    },
+    {
+      "id": "callaloo",
+      "name": "Callaloo",
+      "varieties": ["Amaranth greens", "Chinese spinach"],
+      "category": "caribbean_essential",
+      "caribbean_relevance": true,
+      "priority": "high",
+      "priority_color": "#F97316",
+      "germination_days": [4, 10],
+      "harvest_days": [20, 45],
+      "regrows": [8, 10],
+      "regrow_period_days": 90,
+      "yield_per_plant_oz": [4, 8],
+      "yield_per_sqft_month_oz": [10, 16],
+      "ph_range": [5.5, 6.5],
+      "ph_optimal": 6.0,
+      "ec_range": [1.5, 2.5],
+      "temp_f": [70, 90],
+      "temp_optimal_f": 80,
+      "ppfd": [200, 400],
+      "dli": [14, 20],
+      "light_hours": 14,
+      "water_ml_per_day": [400, 800],
+      "difficulty": "Easy-Medium",
+      "difficulty_score": 3,
+      "best_systems": ["DWC", "NFT"],
+      "common_pests": ["Leaf miners", "Aphids"],
+      "common_diseases": ["Damping off (seedling stage)"],
+      "companions": ["Basil", "Peppers"],
+      "grocery_price_per_lb": [8.00, 15.00],
+      "hydro_cost_per_lb": [3.00, 5.00],
+      "notes": "Caribbean staple. 30-50% faster than soil. 61% higher antioxidants hydroponically. Cut-and-come-again harvesting. Nearly unavailable fresh in Western MA.",
+      "cultural_note": "Essential ingredient in Trinidadian callaloo, Jamaican callaloo soup, and many Caribbean green dishes. Growing this fresh is a major advantage for Pan Road Catering.",
+      "visual_stages": [
+        {"stage": "Seed", "day": 0, "description": "Tiny round seeds scattered on growing medium"},
+        {"stage": "Sprout", "day": 7, "description": "Red-green stems with small leaves"},
+        {"stage": "Young plant", "day": 14, "description": "Upright growth, leaves broadening"},
+        {"stage": "First harvest", "day": 25, "description": "Cut stems 6-8 inches, leaves are tender"},
+        {"stage": "Regrowth", "day": 35, "description": "New shoots from cut stems — harvest again"}
+      ]
+    },
+    {
+      "id": "culantro",
+      "name": "Culantro",
+      "varieties": ["Eryngium foetidum"],
+      "aka": ["Shadow beni", "Chadon beni", "Recao", "Sawtooth coriander"],
+      "category": "caribbean_essential",
+      "caribbean_relevance": true,
+      "priority": "high",
+      "priority_color": "#F97316",
+      "germination_days": [14, 30],
+      "harvest_days": [60, 75],
+      "yield_per_plant_oz": [2, 4],
+      "yield_per_sqft_month_oz": [3, 6],
+      "ph_range": [5.5, 6.5],
+      "ph_optimal": 6.0,
+      "ec_range": [1.0, 1.8],
+      "temp_f": [75, 90],
+      "temp_optimal_f": 82,
+      "germination_temp_f": [80, 85],
+      "ppfd": [100, 200],
+      "dli": [8, 12],
+      "light_hours": 12,
+      "water_ml_per_day": [200, 400],
+      "difficulty": "Medium",
+      "difficulty_score": 4,
+      "best_systems": ["DWC", "Kratky"],
+      "common_pests": ["Minimal — naturally pest resistant"],
+      "common_diseases": ["Root rot if overwatered"],
+      "companions": ["Peppers", "Callaloo"],
+      "grocery_price_per_lb": [10.00, 20.00],
+      "hydro_cost_per_lb": [3.00, 5.00],
+      "notes": "PREFERS SHADE — lower light needs = lower electricity cost. Nearly impossible to source fresh in Western MA. Biggest competitive advantage crop for Pan Road Catering. Slow germination needs patience — soak seeds 24hr before planting, keep 80-85°F. Once established, produces continuously for months.",
+      "cultural_note": "Essential for green seasoning, sofrito, and chutney across Trinidad, Guyana, Jamaica, and Puerto Rican cooking. 10x stronger flavor than cilantro.",
+      "visual_stages": [
+        {"stage": "Seed soak", "day": -1, "description": "Soak tiny seeds in warm water 24 hours"},
+        {"stage": "Planted", "day": 0, "description": "Press seeds into moist rockwool or surface of medium"},
+        {"stage": "Waiting", "day": 14, "description": "Patience — nothing visible yet, keep moist and warm"},
+        {"stage": "Sprout", "day": 21, "description": "Tiny green shoots finally emerge"},
+        {"stage": "Young rosette", "day": 40, "description": "Serrated (sawtooth) leaves forming rosette"},
+        {"stage": "Harvest", "day": 70, "description": "Outer leaves 6-8 inches, harvest from outside in"}
+      ]
+    },
+    {
+      "id": "scotch_bonnet",
+      "name": "Scotch Bonnet Pepper",
+      "varieties": ["Scotch Bonnet", "Caribbean Red"],
+      "category": "caribbean_essential",
+      "caribbean_relevance": true,
+      "priority": "medium",
+      "priority_color": "#F5C242",
+      "germination_days": [14, 30],
+      "harvest_days": [90, 150],
+      "yield_per_plant_peppers": [20, 50],
+      "yield_per_plant_per_season": "20-50+ peppers",
+      "ph_range": [5.5, 6.5],
+      "ph_optimal": 6.0,
+      "ec_range": [2.0, 2.5],
+      "temp_f": [75, 95],
+      "temp_optimal_f": 85,
+      "ppfd": [400, 600],
+      "dli": [20, 30],
+      "light_hours": 16,
+      "water_ml_per_day": [500, 1000],
+      "difficulty": "Medium",
+      "difficulty_score": 4,
+      "best_systems": ["DWC (5-gallon dedicated bucket)"],
+      "common_pests": ["Aphids", "Spider mites", "Whiteflies"],
+      "common_diseases": ["Blossom end rot (calcium)", "Root rot"],
+      "companions": ["Basil (pest deterrent)"],
+      "grocery_price_per_lb": [8.00, 15.00],
+      "hydro_cost_per_lb": [2.00, 4.00],
+      "scoville": [100000, 350000],
+      "notes": "START SEEDS EARLY — 3-4 month lead time. Hand-pollinate indoors with small brush or shake plants. Plants become MORE productive as perennials in year 2+. Needs dedicated 5-gallon bucket for root space. Needs strongest light in the system.",
+      "cultural_note": "Backbone of Caribbean hot sauce, jerk seasoning, pepper sauce. Growing your own means unlimited supply for Pan Road Catering.",
+      "visual_stages": [
+        {"stage": "Seed", "day": 0, "description": "Small flat seeds on heat mat at 80-85°F"},
+        {"stage": "Sprout", "day": 21, "description": "Slow — thin green stem emerges"},
+        {"stage": "Seedling", "day": 45, "description": "First true leaves, 3-4 inches tall"},
+        {"stage": "Vegetative", "day": 75, "description": "Bushy plant 12-18 inches, branching"},
+        {"stage": "Flowering", "day": 90, "description": "Small white flowers — hand pollinate these!"},
+        {"stage": "Fruiting", "day": 110, "description": "Green peppers forming"},
+        {"stage": "Ripe", "day": 130, "description": "Peppers turn yellow/orange/red — ready to pick"}
+      ]
+    },
+    {
+      "id": "thyme",
+      "name": "Thyme",
+      "varieties": ["Common thyme (Thymus vulgaris)", "Big leaf thyme / Cuban oregano (Plectranthus amboinicus)"],
+      "category": "caribbean_essential",
+      "caribbean_relevance": true,
+      "priority": "high",
+      "priority_color": "#F97316",
+      "germination_days": [8, 20],
+      "harvest_days": [30, 60],
+      "yield_per_plant_oz": [2, 4],
+      "yield_per_sqft_month_oz": [4, 8],
+      "ph_range": [5.5, 7.0],
+      "ph_optimal": 6.0,
+      "ec_range": [0.8, 1.6],
+      "temp_f": [60, 80],
+      "temp_optimal_f": 70,
+      "ppfd": [200, 400],
+      "dli": [14, 20],
+      "light_hours": 14,
+      "water_ml_per_day": [100, 250],
+      "difficulty": "Easy",
+      "difficulty_score": 2,
+      "best_systems": ["DWC", "Kratky", "NFT", "Ebb-Flow"],
+      "common_pests": ["Spider mites (dry conditions)"],
+      "common_diseases": ["Root rot (overwatering)"],
+      "companions": ["Most herbs", "Peppers"],
+      "grocery_price_per_lb": [8.00, 16.00],
+      "hydro_cost_per_lb": [2.00, 4.00],
+      "notes": "386% more fresh weight vs outdoor growing. Two important varieties for Caribbean cooking: common thyme (Thymus vulgaris) AND 'big leaf thyme' which is actually Cuban oregano (Plectranthus amboinicus) — a completely different plant. Cuban oregano roots easily from cuttings in water.",
+      "visual_stages": [
+        {"stage": "Seed/Cutting", "day": 0, "description": "Tiny seeds OR stem cutting in water"},
+        {"stage": "Roots", "day": 14, "description": "Roots developing (cuttings root faster)"},
+        {"stage": "Established", "day": 30, "description": "Bushy growth, aromatic leaves"},
+        {"stage": "Harvest", "day": 45, "description": "Snip stems — plant continues growing"}
+      ]
+    },
+    {
+      "id": "green_onions",
+      "name": "Green Onions",
+      "varieties": ["Scallions", "Spring onions"],
+      "category": "starter",
+      "caribbean_relevance": true,
+      "priority": "starter",
+      "priority_color": "#22C55E",
+      "germination_days": [5, 10],
+      "harvest_days": [21, 28],
+      "yield_per_plant_oz": [1, 2],
+      "yield_per_sqft_month_oz": [6, 12],
+      "ph_range": [6.0, 7.0],
+      "ph_optimal": 6.5,
+      "ec_range": [1.4, 1.8],
+      "temp_f": [55, 75],
+      "temp_optimal_f": 65,
+      "ppfd": [150, 250],
+      "dli": [10, 14],
+      "light_hours": 12,
+      "water_ml_per_day": [100, 250],
+      "difficulty": "Very Easy",
+      "difficulty_score": 1,
+      "best_systems": ["DWC", "Kratky", "NFT"],
+      "common_pests": ["Thrips"],
+      "common_diseases": ["Minimal"],
+      "companions": ["Lettuce", "Herbs"],
+      "grocery_price_per_lb": [2.00, 4.00],
+      "hydro_cost_per_lb": [0.75, 1.50],
+      "notes": "Regrows from base after cutting. Can also start from grocery store scallion roots — just place in water. Fastest path to harvest for new growers.",
+      "visual_stages": [
+        {"stage": "Start", "day": 0, "description": "Seed OR grocery store root end in net pot"},
+        {"stage": "Shooting", "day": 7, "description": "Green shoots growing upward rapidly"},
+        {"stage": "Harvest", "day": 21, "description": "6-8 inch greens ready — cut above white base"},
+        {"stage": "Regrow", "day": 28, "description": "New growth from same base — harvest again"}
+      ]
+    },
+    {
+      "id": "lemongrass",
+      "name": "Lemongrass",
+      "varieties": ["Cymbopogon citratus"],
+      "category": "caribbean_addition",
+      "caribbean_relevance": true,
+      "priority": "medium",
+      "priority_color": "#F5C242",
+      "germination_days": null,
+      "start_method": "Grocery store stalk rooted in water",
+      "harvest_days": [60, 90],
+      "yield_per_plant_oz": [4, 8],
+      "yield_per_sqft_month_oz": [4, 8],
+      "ph_range": [5.5, 6.5],
+      "ph_optimal": 6.0,
+      "ec_range": [1.0, 2.0],
+      "temp_f": [70, 90],
+      "temp_optimal_f": 80,
+      "ppfd": [300, 500],
+      "dli": [16, 22],
+      "light_hours": 14,
+      "water_ml_per_day": [500, 1000],
+      "difficulty": "Easy",
+      "difficulty_score": 2,
+      "best_systems": ["DWC (3-5 gallon)"],
+      "common_pests": ["Minimal"],
+      "common_diseases": ["Root rot"],
+      "companions": ["Independent — needs space"],
+      "grocery_price_per_lb": [4.00, 8.00],
+      "hydro_cost_per_lb": [1.50, 3.00],
+      "notes": "92% more production than soil-grown. Start from grocery store stalks — look for ones with intact base. Root in glass of water for 2-3 weeks before transplanting to DWC. Needs larger container.",
+      "visual_stages": [
+        {"stage": "Stalk", "day": 0, "description": "Fresh grocery stalk trimmed, placed in water glass"},
+        {"stage": "Rooting", "day": 14, "description": "White roots emerging from base in water"},
+        {"stage": "Transplant", "day": 21, "description": "Move to DWC bucket with LECA"},
+        {"stage": "Growth", "day": 45, "description": "New green blades growing from center"},
+        {"stage": "Harvest", "day": 75, "description": "Outer stalks pulled — inner ones keep growing"}
+      ]
+    },
+    {
+      "id": "mint",
+      "name": "Mint",
+      "varieties": ["Spearmint", "Peppermint"],
+      "category": "addition",
+      "caribbean_relevance": true,
+      "priority": "starter",
+      "priority_color": "#22C55E",
+      "germination_days": [7, 14],
+      "harvest_days": [21, 30],
+      "yield_per_plant_oz": [3, 6],
+      "ph_range": [5.5, 6.5],
+      "ec_range": [1.0, 1.6],
+      "temp_f": [55, 75],
+      "temp_optimal_f": 65,
+      "ppfd": [150, 250],
+      "light_hours": 14,
+      "difficulty": "Very Easy",
+      "difficulty_score": 1,
+      "best_systems": ["DWC", "Kratky", "NFT"],
+      "notes": "Extremely vigorous grower — keep in its own container or it takes over. Great for drinks and Caribbean desserts."
+    }
+  ],
+
+  "system_comparison": [
+    {
+      "id": "dwc",
+      "name": "Deep Water Culture (DWC)",
+      "how_it_works": "Plant roots sit in oxygenated nutrient solution inside buckets. An air pump provides constant oxygen through air stones — like a fish tank for plants.",
+      "setup_cost": [20, 180],
+      "monthly_cost": [15, 30],
+      "plant_sites": [1, 8],
+      "plants_per_sqft": [1, 2],
+      "maintenance_hours_week": 1.5,
+      "crop_compatibility": ["All — greens, herbs, peppers, tomatoes"],
+      "lava_rock_compatible": true,
+      "scalability": 9,
+      "beginner_rating": 9,
+      "recommended_for": "BEST ALL-AROUND STARTER. Recommended for this project.",
+      "products": [
+        {"name": "DIY 5-gallon bucket + net pot lid", "price": [12, 20], "per": "bucket"},
+        {"name": "VIVOSUN DWC 4-bucket kit", "price": [100, 140]},
+        {"name": "General Hydroponics WaterFarm", "price": [60, 85]}
+      ]
+    },
+    {
+      "id": "kratky",
+      "name": "Kratky Method (Passive)",
+      "how_it_works": "Plants sit in net pots on sealed containers of nutrient solution. No pump, no electricity, no moving parts. As roots drink, an air gap forms naturally.",
+      "setup_cost": [25, 75],
+      "monthly_cost": [5, 15],
+      "plant_sites": [6, 12],
+      "plants_per_sqft": [2, 4],
+      "maintenance_hours_week": 0.5,
+      "crop_compatibility": ["Herbs, leafy greens, green onions — NOT fruiting plants"],
+      "lava_rock_compatible": true,
+      "scalability": 5,
+      "beginner_rating": 10,
+      "recommended_for": "BEST FOR ELDERLY/DISABILITY — simplest possible system. Set and forget.",
+      "products": [
+        {"name": "Mason jars + net pot lids", "price": [3, 5], "per": "plant"},
+        {"name": "Storage totes + net pot lids (DIY)", "price": [15, 30]}
+      ]
+    },
+    {
+      "id": "nft",
+      "name": "NFT (Nutrient Film Technique)",
+      "how_it_works": "A thin stream of nutrients flows through tilted channels. Roots sit in the stream and absorb nutrients as they pass by.",
+      "setup_cost": [79, 300],
+      "monthly_cost": [15, 30],
+      "plant_sites": [36, 90],
+      "plants_per_sqft": [4, 8],
+      "maintenance_hours_week": 2.0,
+      "crop_compatibility": ["Leafy greens, herbs — NOT large fruiting plants"],
+      "lava_rock_compatible": false,
+      "lava_rock_note": "Too heavy for NFT channels",
+      "scalability": 8,
+      "beginner_rating": 7,
+      "recommended_for": "Best plant density per dollar. Good for scaling to catering supply.",
+      "products": [
+        {"name": "VIVOSUN 36-site NFT system", "price": [79, 99]},
+        {"name": "DIY PVC pipe build (30-90 sites)", "price": [150, 300]}
+      ]
+    },
+    {
+      "id": "ebb_flow",
+      "name": "Ebb-and-Flow (Flood and Drain)",
+      "how_it_works": "A timer periodically floods a grow tray with nutrient solution, then drains it back to a reservoir. Roots get both nutrients and oxygen in cycles.",
+      "setup_cost": [50, 350],
+      "monthly_cost": [15, 25],
+      "plant_sites": [4, 24],
+      "plants_per_sqft": [2, 4],
+      "maintenance_hours_week": 1.5,
+      "crop_compatibility": ["All — greens, herbs, peppers"],
+      "lava_rock_compatible": true,
+      "lava_rock_note": "BEST MATCH for lava rocks — flooding/draining complements their drainage properties",
+      "scalability": 7,
+      "beginner_rating": 7,
+      "products": [
+        {"name": "Hydrofarm Megagarden", "price": [70, 120]},
+        {"name": "DIY build", "price": [50, 150]}
+      ]
+    },
+    {
+      "id": "vertical_tower",
+      "name": "Vertical Tower",
+      "how_it_works": "Plants sit in stacked rings or pockets on a central column. Nutrient solution drips from the top and cascades down through all plant sites.",
+      "setup_cost": [60, 550],
+      "monthly_cost": [15, 40],
+      "plant_sites": [20, 45],
+      "plants_per_sqft": [6, 12],
+      "maintenance_hours_week": 1.5,
+      "crop_compatibility": ["Greens, herbs, strawberries — limited for large plants"],
+      "lava_rock_compatible": "varies_by_model",
+      "scalability": 6,
+      "beginner_rating": 7,
+      "recommended_for": "Best space efficiency. What you saw in the photo.",
+      "products": [
+        {"name": "Mr. Stacky Smart Farm (20 sites)", "price": [110, 170]},
+        {"name": "VEVOR/KUCKGO tower (30-45 sites)", "price": [60, 200]},
+        {"name": "Lettuce Grow Farmstand (12 sites)", "price": [350, 350]},
+        {"name": "Tower Garden HOME", "price": [500, 550]}
+      ]
+    }
+  ],
+
+  "growing_media_comparison": [
+    {
+      "id": "leca",
+      "name": "LECA / Expanded Clay Pebbles",
+      "aka": ["Hydroton", "Clay pebbles", "Grow rocks"],
+      "cost_per_cuft": [8, 15],
+      "ph_stability": "Neutral (7.0)",
+      "reusable": true,
+      "root_friendly": 9,
+      "best_systems": ["DWC", "Ebb-Flow", "Vertical"],
+      "pros": ["Smooth and gentle on roots", "Uniform size", "Easy to clean", "Reusable indefinitely", "Assumed by most tutorials"],
+      "cons": ["More expensive than lava rock", "Can float in deep water initially"],
+      "recommendation": "BEST FOR BEGINNERS — start here",
+      "product": "GROW!T 40L bag — $25-35"
+    },
+    {
+      "id": "lava_rock",
+      "name": "Lava Rock",
+      "aka": ["Volcanic rock", "Pumice"],
+      "cost_per_cuft": [3, 10],
+      "ph_stability": "Usually neutral — test before use",
+      "reusable": true,
+      "root_friendly": 5,
+      "best_systems": ["Ebb-Flow", "DWC (with caution)"],
+      "pros": ["Very cheap", "Excellent drainage", "Porous surface harbors beneficial bacteria", "Available at Home Depot/landscaping suppliers"],
+      "cons": ["SHARP EDGES damage roots", "Uneven sizes", "Heavy", "Can dust — rinse thoroughly", "Some sources run alkaline"],
+      "recommendation": "Good budget option for ebb-and-flow. Use smaller, tumbled pieces. ALWAYS rinse until water runs clear.",
+      "tips": ["Select smaller pieces to reduce root damage", "Rinse 3-5 times until water runs clear", "Test pH before adding to system", "Best for ebb-and-flow where flooding/draining cycle complements drainage"]
+    },
+    {
+      "id": "rockwool",
+      "name": "Rockwool",
+      "cost_per_98cubes": [12, 18],
+      "reusable": false,
+      "root_friendly": 7,
+      "best_systems": ["NFT", "Drip — seed starting"],
+      "recommendation": "Industry standard for seed starting. Not for ongoing growing medium."
+    },
+    {
+      "id": "coco_coir",
+      "name": "Coco Coir",
+      "cost_per_cuft": [5, 12],
+      "reusable": false,
+      "root_friendly": 8,
+      "best_systems": ["Drip systems"],
+      "recommendation": "Best water retention. Needs calcium-magnesium supplement. Degrades over time."
+    },
+    {
+      "id": "perlite",
+      "name": "Perlite",
+      "cost_per_cuft": [5, 7],
+      "reusable": "limited",
+      "root_friendly": 6,
+      "best_systems": ["Drip blends (70/30 coco-perlite)"],
+      "recommendation": "Best in blends. Floats in flood systems. Creates harmful dust — wear mask."
+    }
+  ],
+
+  "budget": {
+    "phase1": {
+      "label": "Phase 1 — Learn the Basics",
+      "months": "1-2",
+      "total": [345, 456],
+      "items": [
+        {"name": "4-bucket DWC system", "cost": [50, 80], "product": "VIVOSUN or DIY 5-gal buckets + net pot lids"},
+        {"name": "LED grow light", "cost": [140, 150], "product": "Spider Farmer SF2000 (200W, covers 2x4ft)"},
+        {"name": "Nutrients", "cost": [30, 40], "product": "General Hydroponics Flora Trio (3 quarts)"},
+        {"name": "pH meter + TDS meter", "cost": [12, 20], "product": "VIVOSUN combo kit"},
+        {"name": "pH Up/Down solutions", "cost": [12, 18], "product": "GH pH Control Kit"},
+        {"name": "Growing medium", "cost": [15, 20], "product": "LECA clay pebbles 10L bag"},
+        {"name": "Seeds", "cost": [15, 25], "product": "Lettuce, basil, callaloo, culantro, scotch bonnet, thyme"},
+        {"name": "Light timer", "cost": [8, 12], "product": "BN-LINK mechanical outlet timer"},
+        {"name": "Air pump", "cost": [20, 30], "product": "Active Aqua or VIVOSUN 4-outlet"},
+        {"name": "Air stones (4-pack)", "cost": [8, 10], "product": "4-inch cylinder stones"},
+        {"name": "Net pots (25-pack)", "cost": [5, 8], "product": "3-inch net pots"},
+        {"name": "Air tubing", "cost": [5, 8], "product": "25 ft standard tubing"},
+        {"name": "Clip fan", "cost": [15, 20], "product": "6-inch oscillating clip fan"},
+        {"name": "Miscellaneous", "cost": [10, 15], "product": "Measuring cups, syringes, spray bottle, labels"}
+      ],
+      "monthly_operating": {
+        "electricity_kwh_rate": 0.32,
+        "electricity_note": "Eversource all-in residential rate, West Springfield MA",
+        "items": [
+          {"name": "SF2000 LED (200W x 14hr/day)", "monthly": 27.00},
+          {"name": "Air pump (10W x 24hr)", "monthly": 2.30},
+          {"name": "Clip fan (10W x 14hr)", "monthly": 1.35},
+          {"name": "Nutrients + pH solutions", "monthly": [8, 15]},
+          {"name": "Seeds + replacement", "monthly": [3, 4]}
+        ],
+        "total": [42, 50]
+      }
+    },
+    "phase2": {
+      "label": "Phase 2 — Diversify",
+      "months": "3-6",
+      "additional": [200, 400],
+      "cumulative": [560, 880],
+      "plant_sites": [20, 40],
+      "weekly_yield_lbs": [3, 5]
+    },
+    "phase3": {
+      "label": "Phase 3 — Catering Supply",
+      "months": "6-12",
+      "additional": [500, 2000],
+      "cumulative": [1000, 2500],
+      "plant_sites": [50, 100],
+      "weekly_yield_lbs": [10, 20],
+      "monthly_electricity": [80, 112]
+    },
+    "phase4": {
+      "label": "Phase 4 — Community Expansion",
+      "months": "12+",
+      "investment": [3000, 10000],
+      "trigger": "Consistently producing 15+ lbs/week AND demand exceeds capacity"
+    }
+  },
+
+  "roi_data": [
+    {"crop": "Basil", "grocery_per_lb": 9.00, "hydro_per_lb": 3.00, "savings_pct": 67, "breakeven_months": 4},
+    {"crop": "Callaloo", "grocery_per_lb": 11.50, "hydro_per_lb": 4.00, "savings_pct": 65, "breakeven_months": 5},
+    {"crop": "Culantro", "grocery_per_lb": 15.00, "hydro_per_lb": 4.00, "savings_pct": 73, "breakeven_months": 6},
+    {"crop": "Scotch bonnet", "grocery_per_lb": 11.50, "hydro_per_lb": 3.00, "savings_pct": 74, "breakeven_months": 8},
+    {"crop": "Thyme", "grocery_per_lb": 12.00, "hydro_per_lb": 3.00, "savings_pct": 75, "breakeven_months": 4},
+    {"crop": "Lettuce", "grocery_per_lb": 3.25, "hydro_per_lb": 1.50, "savings_pct": 54, "breakeven_months": 6},
+    {"crop": "Green onions", "grocery_per_lb": 3.00, "hydro_per_lb": 1.10, "savings_pct": 63, "breakeven_months": 5}
+  ],
+
+  "maintenance_schedule": {
+    "daily": {
+      "time_minutes": [2, 3],
+      "tasks": [
+        "Check water level — top off if low",
+        "Test pH — target 5.8-6.2",
+        "Quick visual check for wilting or pests",
+        "Verify light timer working"
+      ]
+    },
+    "weekly": {
+      "time_minutes": [10, 15],
+      "tasks": [
+        "Measure EC/TDS (greens: 600-900 PPM, peppers: 1000-1500 PPM)",
+        "Clean any visible algae",
+        "Check roots (white = healthy, brown/slimy = problem)",
+        "Check air pump bubbling properly",
+        "Harvest mature crops"
+      ]
+    },
+    "biweekly": {
+      "time_minutes": [20, 30],
+      "tasks": [
+        "Complete nutrient solution change (drain, clean, refill)",
+        "Deep clean reservoir walls",
+        "Check for root tangles, trim if needed",
+        "Inspect all tubing connections"
+      ]
+    },
+    "monthly": {
+      "time_minutes": [30, 30],
+      "tasks": [
+        "Calibrate pH and EC meters",
+        "Inspect/replace air stones",
+        "Adjust light height for plant growth",
+        "Clean fan blades",
+        "Inventory supplies — reorder if low"
+      ]
+    }
+  },
+
+  "troubleshooting": [
+    {"symptom": "Yellow leaves (lower)", "cause": "Nitrogen deficiency", "fix": "Increase nutrients / check pH"},
+    {"symptom": "Brown leaf tips", "cause": "Nutrient burn", "fix": "Dilute solution / add plain water"},
+    {"symptom": "Wilting despite water", "cause": "Root rot (Pythium)", "fix": "Check roots, lower water temp below 75°F"},
+    {"symptom": "Slow growth", "cause": "pH out of range", "fix": "Adjust to 5.8-6.2"},
+    {"symptom": "Green slime in reservoir", "cause": "Algae — light hitting water", "fix": "Cover all light leaks, use opaque containers"},
+    {"symptom": "Tiny flies around plants", "cause": "Fungus gnats", "fix": "Keep top of medium dry, use yellow sticky traps"},
+    {"symptom": "Tall, leggy, stretched plants", "cause": "Not enough light", "fix": "Lower light or increase wattage"},
+    {"symptom": "Leaf edges curling", "cause": "Heat stress or wind burn", "fix": "Move fan, check temperature (target 65-80°F)"}
+  ],
+
+  "build_stages_dwc": {
+    "title": "Setting Up Your DWC System — 10 Steps",
+    "description": "Visual build guide for a 4-bucket Deep Water Culture system",
+    "steps": [
+      {
+        "step": 1,
+        "title": "Gather your supplies",
+        "description": "Lay out all equipment on a clean surface. You need: 4 buckets with lids, air pump, 4 air stones, tubing, LECA, net pots, nutrients, pH kit, timer.",
+        "illustration_notes": "Birds-eye flat lay of all components labeled. Clean, organized.",
+        "duration_minutes": 5
+      },
+      {
+        "step": 2,
+        "title": "Prepare the buckets",
+        "description": "If using DIY buckets, cut holes in lids to fit your net pots. Hole should be snug — net pot rim sits on lid surface.",
+        "illustration_notes": "Cross-section showing bucket, lid with hole, net pot fitting into hole.",
+        "duration_minutes": 15
+      },
+      {
+        "step": 3,
+        "title": "Rinse your LECA",
+        "description": "Put clay pebbles in a colander or mesh bag. Rinse under running water until water runs clear. This removes dust that can clog your system.",
+        "illustration_notes": "Hands holding colander under faucet, water running through clay pebbles.",
+        "duration_minutes": 10
+      },
+      {
+        "step": 4,
+        "title": "Set up the air system",
+        "description": "Connect air stones to tubing. Connect tubing to air pump (one tube per stone, one stone per bucket). Place air stones in bottom of each bucket.",
+        "illustration_notes": "Exploded diagram: air pump → tubing (with arrows showing flow) → air stones in bucket bottom.",
+        "duration_minutes": 10
+      },
+      {
+        "step": 5,
+        "title": "Fill buckets with water",
+        "description": "Fill each bucket with water to about 1 inch below the net pot. Use water that has sat out 24-48 hours to remove chlorine, or use a carbon filter.",
+        "illustration_notes": "Side-view cross-section showing water level relative to net pot position. Arrow marking '1 inch gap'.",
+        "duration_minutes": 5
+      },
+      {
+        "step": 6,
+        "title": "Mix nutrients",
+        "description": "Add FloraMicro FIRST (2.5mL per gallon), stir. Then add FloraGro (2.5mL), stir. Then FloraBloom (2.5mL), stir. Always add Micro first.",
+        "illustration_notes": "3 bottles labeled clearly, pouring into bucket in numbered order. Measuring syringe shown.",
+        "duration_minutes": 5
+      },
+      {
+        "step": 7,
+        "title": "Test and adjust pH",
+        "description": "Dip pH meter in solution. Target: 5.8-6.2. If too high, add pH Down drops. If too low, add pH Up. Retest after each adjustment.",
+        "illustration_notes": "pH meter in bucket showing digital readout. pH Down bottle with dropper. Scale showing 5.8-6.2 'sweet spot' highlighted green.",
+        "duration_minutes": 5
+      },
+      {
+        "step": 8,
+        "title": "Plant your seeds or seedlings",
+        "description": "Place a rockwool cube with seed into the net pot, or nestle a seedling's roots through the net pot. Fill around with LECA pebbles to support the plant.",
+        "illustration_notes": "Cross-section of net pot: LECA pebbles around a small seedling, roots dangling below into water.",
+        "duration_minutes": 5
+      },
+      {
+        "step": 9,
+        "title": "Set up your light",
+        "description": "Hang or mount the LED panel 18-24 inches above the tops of the net pots. Plug into timer. Set timer: 14 hours ON, 10 hours OFF.",
+        "illustration_notes": "Side view: LED panel hanging from adjustable cables above 4 buckets. Timer plugged into wall showing on/off cycle.",
+        "duration_minutes": 15
+      },
+      {
+        "step": 10,
+        "title": "Turn on and monitor",
+        "description": "Plug in air pump (runs 24/7 — no timer needed). Turn on light. Check for bubbles in each bucket. Your system is now running! Check pH daily.",
+        "illustration_notes": "Happy completed system: 4 buckets under light, bubbles visible in water, small plants in net pots. Checkmark overlay.",
+        "duration_minutes": 2
+      }
+    ]
+  },
+
+  "build_stages_kratky": {
+    "title": "Setting Up a Kratky Mason Jar — 6 Steps",
+    "description": "The simplest possible hydroponic system — ideal for elderly and disability access",
+    "steps": [
+      {
+        "step": 1,
+        "title": "Get a wide-mouth mason jar and net pot lid",
+        "description": "Any quart or half-gallon wide-mouth jar works. Net pot lids fit standard mason jar openings — buy online for about $2-3 each.",
+        "illustration_notes": "Mason jar with net pot lid sitting next to it. Simple, clean."
+      },
+      {
+        "step": 2,
+        "title": "Fill jar with nutrient water",
+        "description": "Mix nutrients in water (same Flora Trio recipe). Adjust pH to 5.8-6.2. Fill jar to the top.",
+        "illustration_notes": "Side view of jar filled with slightly tinted water. pH meter testing."
+      },
+      {
+        "step": 3,
+        "title": "Add LECA and plant to net pot",
+        "description": "Put a few LECA pebbles in the net pot. Nestle your seedling in. Fill around with more LECA. Roots should dangle below the pot.",
+        "illustration_notes": "Cross-section: net pot with LECA and small plant, roots hanging down."
+      },
+      {
+        "step": 4,
+        "title": "Place net pot on jar",
+        "description": "Set the net pot lid on the jar. The bottom of the net pot and roots should touch the water. That's it — no pump needed.",
+        "illustration_notes": "Assembled jar with plant. Arrow showing roots touching water level."
+      },
+      {
+        "step": 5,
+        "title": "Place under light and wait",
+        "description": "Put the jar under your LED light or on a bright windowsill. The plant drinks the water over time, and an air gap naturally forms — this gives roots oxygen.",
+        "illustration_notes": "Jar under LED strip light on a shelf. Side view showing air gap forming between water and net pot over time."
+      },
+      {
+        "step": 6,
+        "title": "Check once a week",
+        "description": "Top off with pH-adjusted nutrient water when level gets low. That's the entire maintenance routine. Harvest when ready!",
+        "illustration_notes": "Person pouring water from a small jug into the jar. Simple, relaxed."
+      }
+    ]
+  },
+
+  "accessibility_specs": {
+    "wcag_level": "AA (2.2)",
+    "web_app": {
+      "min_font_body": "18px",
+      "min_font_heading": "28px",
+      "min_font_label": "14px",
+      "contrast_ratio_normal": "4.5:1",
+      "contrast_ratio_large": "3:1",
+      "touch_target_min": "44x44px",
+      "focus_indicator": "3px solid with 2px offset",
+      "motion": "respect prefers-reduced-motion",
+      "keyboard": "full tab navigation, enter/space to activate, escape to close",
+      "screen_reader": "semantic HTML5, ARIA landmarks, alt text on all visuals, live regions for dynamic content",
+      "offline": "PWA with service worker for offline access",
+      "font_recommendations": {
+        "body": "Inter — high x-height, open counters, good for elderly readers",
+        "heading": "Oswald — high legibility at large sizes",
+        "data": "JetBrains Mono or Tabular Lining figures in Inter"
+      },
+      "elderly_specific": [
+        "No hover-only interactions — everything accessible via click/tap",
+        "No auto-advancing carousels or slideshows",
+        "Persistent navigation — no hamburger menus on large screens",
+        "Large, clearly labeled buttons with icon + text (never icon-only)",
+        "Avoid blue-yellow color combinations (hardest to distinguish with aging eyes)",
+        "High contrast mode toggle in settings",
+        "Text zoom support up to 200% without layout breakage",
+        "Simple language — one idea per sentence, active voice"
+      ],
+      "recommended_components": {
+        "library": "Radix UI primitives + custom styling (best accessibility out of the box)",
+        "alternative": "shadcn/ui (built on Radix, already accessible)",
+        "avoid": "Material UI (overly complex for this use case)"
+      }
+    },
+    "pdf": {
+      "min_font_body": "14pt",
+      "min_font_heading": "22pt",
+      "line_height": 1.6,
+      "margins": "1 inch all sides",
+      "contrast": "Black text on white background, gold accents for headings",
+      "layout": "Single column, no multi-column text",
+      "images": "All diagrams have text descriptions below them",
+      "page_numbers": "Large, bottom center",
+      "binding": "Left margin extra 0.25 inch for staple binding"
+    },
+    "carousel": {
+      "min_font_body": "48px",
+      "min_font_heading": "72px",
+      "max_words_per_slide": 25,
+      "contrast": "White or gold text on dark background",
+      "aspect_ratio": "9:16 (1080x1920px)",
+      "safe_zone": "100px from all edges for platform UI elements"
+    },
+    "multilingual": {
+      "languages": ["en", "es", "ht"],
+      "approach": "i18n with next-intl or react-i18next",
+      "priority_translations": [
+        "Navigation labels",
+        "Step titles and instructions",
+        "Crop names (include local Caribbean names)",
+        "Safety warnings",
+        "Maintenance checklist items"
+      ],
+      "cultural_notes": {
+        "spanish": "Many Caribbean Spanish speakers — use Caribbean Spanish, not Castilian",
+        "haitian_creole": "Significant Haitian community in Springfield MA",
+        "caribbean_english": "Use familiar Caribbean terminology (shadow beni, not culantro; callaloo, not amaranth)"
+      }
+    }
+  },
+
+  "design_references": {
+    "web_inspiration": [
+      {"name": "Epic Gardening", "url": "epicgardening.com", "what_to_learn": "Progressive disclosure — simple overview first, expand for details. Clean card-based layout. Strong CTAs."},
+      {"name": "Lettuce Grow", "url": "lettucegrow.com", "what_to_learn": "Beautiful product photography integration. Growing guides with timeline visualizations. Mobile-first responsive."},
+      {"name": "Rise Gardens", "url": "risegardens.com", "what_to_learn": "Seed-to-harvest tracking interface. Clean data visualization for growing conditions."},
+      {"name": "Gardyn", "url": "mygardyn.com", "what_to_learn": "AI-powered growing recommendations. App-like web experience. Camera monitoring integration."},
+      {"name": "UMN Extension Hydroponics", "url": "extension.umn.edu/how/small-scale-hydroponics", "what_to_learn": "Academic credibility with accessible writing. Data tables with proper citations. Trusted by institutions."},
+      {"name": "NoSoilSolutions", "url": "nosoilsolutions.com", "what_to_learn": "Real beginner perspective. Honest product reviews. Step-by-step tutorials with photos."}
+    ],
+    "social_media_inspiration": [
+      {"platform": "TikTok/Instagram", "account": "@epicgardening", "followers": "7M+", "what_works": "Quick tips in 15-30 seconds. Before/after transformations. Bold text overlays on video."},
+      {"platform": "TikTok", "account": "@lettucegrow", "what_works": "Timelapse of growth. Clean aesthetic. Product integration."},
+      {"platform": "Instagram", "account": "@hydroponic.gardening", "what_works": "Educational carousels. Step-by-step photo guides. Data-rich infographics."}
+    ],
+    "illustration_style": {
+      "reference": "IKEA assembly manual style — minimal text, clear numbered visuals, universal understanding",
+      "color_coding": {
+        "water_flow": "#3B82F6 (blue)",
+        "nutrient_solution": "#22C55E (green)",
+        "air_flow": "#A8A8A0 (light gray, dashed)",
+        "plant_roots": "#8B6F47 (brown)",
+        "plant_foliage": "#22C55E to #166534 (green gradient)",
+        "light_rays": "#FDE68A (gold light)",
+        "danger_warning": "#EF4444 (red)",
+        "measurement_marks": "#F5C242 (gold)"
+      },
+      "diagram_types_needed": [
+        "System cross-section (bucket cutaway showing water, roots, net pot, air stone, LECA)",
+        "Component exploded view (all parts labeled and numbered)",
+        "Water cycle flow diagram (reservoir → pump → plant → drain → reservoir)",
+        "Growth timeline horizontal bar chart (seed → sprout → veg → harvest for each crop)",
+        "pH scale visual (color-coded 4.0 to 8.0 with sweet spot highlighted)",
+        "Nutrient mixing sequence (3 bottles in order with measurements)",
+        "Space layout diagram (2x4 ft setup from above)",
+        "Plant spacing guide (top-down view of bucket arrangement)"
+      ]
+    }
+  },
+
+  "implementation_notes": {
+    "web_app": {
+      "framework": "Next.js 14+ with App Router",
+      "styling": "Tailwind CSS with custom design tokens matching brand",
+      "components": "Radix UI primitives or shadcn/ui",
+      "state": "React hooks (useState, useReducer) — no external state management needed",
+      "data": "Static JSON (no database needed for v1)",
+      "i18n": "next-intl for multilingual support",
+      "pwa": "next-pwa for offline capability",
+      "analytics": "Vercel Analytics",
+      "key_pages": [
+        "/  — Landing with hero, quick start, crop highlights",
+        "/guide  — Interactive step-by-step build guide (stepper component)",
+        "/crops  — Crop explorer with filtering and detail cards",
+        "/calculator  — Cost calculator and crop planner",
+        "/care  — Maintenance schedule with checklist (saveable to localStorage alternative)",
+        "/troubleshoot  — Symptom-based troubleshooting flow",
+        "/print  — Print-optimized view of full guide"
+      ],
+      "interactive_features": [
+        "Crop planner: select crops → see space, cost, timeline requirements",
+        "Cost calculator: input budget → see recommended system + crop selection",
+        "pH guide: interactive pH scale with tap-to-learn zones",
+        "Harvest tracker: check off harvests, see running yield totals",
+        "Maintenance reminders: opt-in browser notifications for daily/weekly tasks"
+      ]
+    },
+    "pdf": {
+      "tool": "ReportLab (Python) or Puppeteer screenshot of /print page",
+      "pages": "8-12 pages, letter size",
+      "sections": [
+        "Cover page with project name and community branding",
+        "What is hydroponics? (1 page, simple explanation with diagram)",
+        "What you need — shopping list with pictures (2 pages)",
+        "Step-by-step setup guide (3-4 pages with large diagrams)",
+        "What to grow — crop cards (1-2 pages)",
+        "Weekly care checklist (1 page — designed to photocopy and hang on wall)",
+        "Troubleshooting quick reference (1 page)",
+        "Back cover with QR code to web app"
+      ]
+    },
+    "carousel": {
+      "series": [
+        {
+          "title": "Grow Your Own Food at Home",
+          "slides": 10,
+          "content": ["Hook slide (question or bold statement)", "What is hydroponics?", "5 things you need (1 per slide)", "What to grow — 3 crop highlights", "Start for under $500", "CTA — visit web app"]
+        },
+        {
+          "title": "Caribbean Crops You Can Grow Indoors",
+          "slides": 8,
+          "content": ["Hook — 'You can't find fresh shadow beni in MA... until now'", "Callaloo card", "Culantro card", "Scotch bonnet card", "Thyme card", "Cost savings comparison", "Setup overview", "CTA"]
+        },
+        {
+          "title": "The Simplest Growing System for Anyone",
+          "slides": 8,
+          "content": ["Hook — accessible angle", "Kratky method explained in 1 slide", "6 setup steps (1 per slide)", "CTA — designed for everyone"]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AISIM Community Growing Guide — Printable Handout</title>
+<style>
+  @page { size: letter; margin: 0.75in; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: Arial, Helvetica, sans-serif; color: #1A1A1A; background: #fff; font-size: 14pt; line-height: 1.6; }
+  .page { page-break-after: always; min-height: 9in; padding: 0; }
+  .page:last-child { page-break-after: avoid; }
+  h1 { font-size: 36pt; font-weight: 800; color: #1B4332; }
+  h2 { font-size: 24pt; font-weight: 800; color: #1B4332; margin-bottom: 12pt; border-bottom: 3px solid #22C55E; padding-bottom: 6pt; }
+  h3 { font-size: 16pt; font-weight: 700; color: #2D6A4F; margin-bottom: 6pt; }
+  p { margin-bottom: 8pt; }
+  .subtitle { font-size: 14pt; color: #E8663D; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; }
+  .green { color: #22C55E; }
+  .coral { color: #E8663D; }
+  .gold { color: #C49A2A; }
+  .muted { color: #6B6B65; font-size: 12pt; }
+  .center { text-align: center; }
+  .flex-center { display: flex; gap: 16pt; align-items: center; }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14pt; }
+  .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12pt; }
+  .card { border: 2px solid #E8E5DD; border-radius: 12pt; padding: 12pt; background: #FAFAF7; }
+  .card-green { border-color: #22C55E; background: #D8F3DC33; }
+  .card-coral { border-color: #E8663D; background: #FDE8E033; }
+  .card-gold { border-color: #C49A2A; background: #FDE68A33; }
+  .step-num { display: inline-flex; align-items: center; justify-content: center; width: 36pt; height: 36pt; border-radius: 50%; background: #2D6A4F; color: white; font-size: 16pt; font-weight: 800; flex-shrink: 0; }
+  .badge { display: inline-block; padding: 3pt 10pt; border-radius: 20pt; font-size: 10pt; font-weight: 700; }
+  .badge-green { background: #D8F3DC; color: #1B4332; }
+  .badge-coral { background: #FDDED3; color: #C44D2A; }
+  .badge-gold { background: #FDE68A; color: #8B6F47; }
+  .tip { background: #D8F3DC; border-radius: 8pt; padding: 8pt 12pt; font-size: 12pt; margin-top: 6pt; }
+  .tip::before { content: "TIP: "; font-weight: 700; color: #1B4332; }
+  table { width: 100%; border-collapse: collapse; font-size: 12pt; }
+  th { background: #1B4332; color: white; padding: 8pt; text-align: left; font-size: 11pt; }
+  td { padding: 6pt 8pt; border-bottom: 1px solid #E8E5DD; }
+  tr:nth-child(even) { background: #FAFAF7; }
+  .price { font-weight: 700; color: #1B4332; text-align: right; }
+  .total-row { background: #D8F3DC !important; font-weight: 700; font-size: 14pt; }
+  .total-row td { border-top: 3px solid #22C55E; }
+  .check-item { display: flex; align-items: flex-start; gap: 8pt; margin-bottom: 8pt; font-size: 13pt; }
+  .check-box { width: 20pt; height: 20pt; border: 2px solid #2D6A4F; border-radius: 4pt; flex-shrink: 0; margin-top: 2pt; }
+  .symptom-card { display: flex; gap: 10pt; padding: 10pt; border: 1.5px solid #E8E5DD; border-radius: 10pt; margin-bottom: 8pt; }
+  .symptom-card .fix { background: #D8F3DC; border-radius: 6pt; padding: 4pt 8pt; font-size: 11pt; margin-top: 4pt; }
+  svg { max-width: 100%; height: auto; }
+  @media print { .page { min-height: auto; } .no-print { display: none; } }
+</style>
+</head>
+<body>
+
+<!-- PAGE 1: COVER -->
+<div class="page" style="display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center;">
+  <svg viewBox="0 0 200 200" style="width:180pt; margin-bottom:20pt;">
+    <rect x="50" y="100" width="100" height="70" rx="8" fill="#F0EDE6" stroke="#2D6A4F" stroke-width="3"/>
+    <rect x="55" y="130" width="90" height="38" rx="4" fill="#3B82F6" fill-opacity="0.12"/>
+    <path d="M55,130 Q85,138 100,130 Q115,122 145,130" fill="none" stroke="#3B82F6" stroke-width="2"/>
+    <line x1="100" y1="100" x2="100" y2="55" stroke="#2D6A4F" stroke-width="4"/>
+    <ellipse cx="75" cy="48" rx="25" ry="18" fill="#22C55E" fill-opacity="0.6"/>
+    <ellipse cx="125" cy="48" rx="25" ry="18" fill="#22C55E" fill-opacity="0.6"/>
+    <ellipse cx="100" cy="35" rx="22" ry="16" fill="#40916C" fill-opacity="0.6"/>
+    <ellipse cx="88" cy="28" rx="15" ry="12" fill="#22C55E" fill-opacity="0.5"/>
+    <ellipse cx="112" cy="28" rx="15" ry="12" fill="#22C55E" fill-opacity="0.5"/>
+    <path d="M90,110 Q85,130 80,155" fill="none" stroke="#8B6F47" stroke-width="1.5"/>
+    <path d="M100,110 Q100,135 100,160" fill="none" stroke="#8B6F47" stroke-width="2"/>
+    <path d="M110,110 Q115,130 120,155" fill="none" stroke="#8B6F47" stroke-width="1.5"/>
+    <circle cx="85" cy="148" r="3" fill="#3B82F6" fill-opacity="0.2" stroke="#3B82F6" stroke-width="0.5"/>
+    <circle cx="100" cy="142" r="4" fill="#3B82F6" fill-opacity="0.2" stroke="#3B82F6" stroke-width="0.5"/>
+    <circle cx="115" cy="146" r="3" fill="#3B82F6" fill-opacity="0.2" stroke="#3B82F6" stroke-width="0.5"/>
+  </svg>
+  <p class="subtitle" style="margin-bottom:8pt;">AISIM Community Initiative</p>
+  <h1 style="font-size:42pt; margin-bottom:8pt;">Grow Your<br>Own Food</h1>
+  <p style="font-size:16pt; color:#4A4A45; max-width:400pt; margin:0 auto 20pt;">A step-by-step guide to growing fresh herbs and greens indoors at home</p>
+  <p style="font-size:14pt; color:#2D6A4F; font-weight:700;">West Springfield, MA</p>
+  <div style="margin-top:30pt; display:flex; gap:12pt; justify-content:center; flex-wrap:wrap;">
+    <span class="badge badge-green" style="font-size:12pt; padding:6pt 14pt;">Easy to Follow</span>
+    <span class="badge badge-coral" style="font-size:12pt; padding:6pt 14pt;">Under $500</span>
+    <span class="badge badge-gold" style="font-size:12pt; padding:6pt 14pt;">Designed for Everyone</span>
+  </div>
+</div>
+
+<!-- PAGE 2: WHAT IS HYDROPONICS -->
+<div class="page">
+  <h2>What is Hydroponics?</h2>
+  <p style="font-size:16pt; margin-bottom:16pt;">Growing plants in <strong>water with nutrients</strong> instead of soil. No dirt, no garden — just a bucket, water, and a light.</p>
+  <div class="center" style="margin:16pt 0;">
+    <svg viewBox="0 0 500 220" style="width:100%; max-width:480pt;">
+      <rect x="10" y="20" width="200" height="180" rx="10" fill="#FAFAF7" stroke="#E8E5DD" stroke-width="2"/>
+      <text x="110" y="16" text-anchor="middle" font-size="14" fill="#DC2626" font-weight="bold">OLD WAY — Soil</text>
+      <rect x="30" y="120" width="160" height="60" rx="4" fill="#8B6F47" fill-opacity="0.3" stroke="#8B6F47" stroke-width="1"/>
+      <text x="110" y="155" text-anchor="middle" font-size="12" fill="#8B6F47" font-weight="bold">DIRT</text>
+      <line x1="110" y1="120" x2="110" y2="80" stroke="#2D6A4F" stroke-width="2"/>
+      <circle cx="98" cy="72" r="12" fill="#22C55E" fill-opacity="0.4"/>
+      <circle cx="122" cy="72" r="12" fill="#40916C" fill-opacity="0.4"/>
+      <circle cx="55" cy="140" r="3" fill="#4A4A45"/>
+      <circle cx="75" cy="155" r="2" fill="#4A4A45"/>
+      <circle cx="150" cy="145" r="2.5" fill="#4A4A45"/>
+      <circle cx="110" cy="42" r="14" fill="#FDE68A" stroke="#C49A2A" stroke-width="1"/>
+      <text x="110" y="46" text-anchor="middle" font-size="8" fill="#C49A2A" font-weight="bold">SUN</text>
+      <line x1="80" y1="185" x2="140" y2="185" stroke="#DC2626" stroke-width="3"/>
+      <text x="110" y="200" text-anchor="middle" font-size="11" fill="#DC2626" font-weight="bold">Needs yard, sun, seasons</text>
+      <text x="250" y="110" text-anchor="middle" font-size="24" fill="#C49A2A" font-weight="bold">&#8594;</text>
+      <rect x="290" y="20" width="200" height="180" rx="10" fill="#D8F3DC33" stroke="#22C55E" stroke-width="2"/>
+      <text x="390" y="16" text-anchor="middle" font-size="14" fill="#22C55E" font-weight="bold">NEW WAY — Hydroponics</text>
+      <path d="M330,90 L320,170 L460,170 L450,90 Z" fill="#F0EDE6" stroke="#2D6A4F" stroke-width="2"/>
+      <rect x="325" y="86" width="130" height="6" rx="2" fill="#4A4A45"/>
+      <path d="M324,120 L322,168 L458,168 L456,120 Z" fill="#3B82F6" fill-opacity="0.12"/>
+      <line x1="390" y1="86" x2="390" y2="58" stroke="#2D6A4F" stroke-width="2"/>
+      <circle cx="378" cy="52" r="12" fill="#22C55E" fill-opacity="0.6"/>
+      <circle cx="402" cy="52" r="12" fill="#22C55E" fill-opacity="0.6"/>
+      <circle cx="390" cy="42" r="10" fill="#40916C" fill-opacity="0.6"/>
+      <path d="M382,92 Q378,120 374,150" fill="none" stroke="#8B6F47" stroke-width="1.2"/>
+      <path d="M390,92 Q390,125 390,155" fill="none" stroke="#8B6F47" stroke-width="1.5"/>
+      <path d="M398,92 Q402,120 406,150" fill="none" stroke="#8B6F47" stroke-width="1.2"/>
+      <rect x="345" y="30" width="90" height="8" rx="2" fill="#1A1A1A"/>
+      <line x1="360" y1="38" x2="350" y2="50" stroke="#FDE68A" stroke-width="0.5" stroke-dasharray="2 2"/>
+      <line x1="390" y1="38" x2="390" y2="50" stroke="#FDE68A" stroke-width="0.5" stroke-dasharray="2 2"/>
+      <line x1="420" y1="38" x2="430" y2="50" stroke="#FDE68A" stroke-width="0.5" stroke-dasharray="2 2"/>
+      <text x="390" y="200" text-anchor="middle" font-size="11" fill="#22C55E" font-weight="bold">Works indoors, year-round, anywhere</text>
+    </svg>
+  </div>
+  <div class="grid-3" style="margin-top:16pt;">
+    <div class="card card-green center">
+      <svg viewBox="0 0 60 60" style="width:50pt; margin:0 auto 6pt;"><circle cx="30" cy="30" r="26" fill="#D8F3DC" stroke="#22C55E" stroke-width="2"/><path d="M30,12 Q18,30 30,48 Q42,30 30,12Z" fill="#3B82F6" fill-opacity="0.3" stroke="#3B82F6" stroke-width="1.5"/></svg>
+      <h3 style="font-size:14pt;">No Soil Needed</h3>
+      <p class="muted">Plants grow in water with nutrients</p>
+    </div>
+    <div class="card card-green center">
+      <svg viewBox="0 0 60 60" style="width:50pt; margin:0 auto 6pt;"><circle cx="30" cy="30" r="26" fill="#D8F3DC" stroke="#22C55E" stroke-width="2"/><rect x="14" y="18" width="32" height="8" rx="2" fill="#1A1A1A"/><circle cx="20" cy="22" r="2" fill="#FDE68A"/><circle cx="30" cy="22" r="2" fill="#FDE68A"/><circle cx="40" cy="22" r="2" fill="#FDE68A"/></svg>
+      <h3 style="font-size:14pt;">Grow Indoors</h3>
+      <p class="muted">LED light replaces the sun</p>
+    </div>
+    <div class="card card-green center">
+      <svg viewBox="0 0 60 60" style="width:50pt; margin:0 auto 6pt;"><circle cx="30" cy="30" r="26" fill="#D8F3DC" stroke="#22C55E" stroke-width="2"/><text x="30" y="28" text-anchor="middle" font-size="10" fill="#1B4332" font-weight="bold">365</text><text x="30" y="40" text-anchor="middle" font-size="8" fill="#1B4332">days</text></svg>
+      <h3 style="font-size:14pt;">Year-Round</h3>
+      <p class="muted">Harvest fresh food every month</p>
+    </div>
+  </div>
+</div>
+
+<!-- PAGE 3: SHOPPING LIST -->
+<div class="page">
+  <h2>What You Need — Shopping List</h2>
+  <p style="margin-bottom:12pt;">Everything to get started. Total cost: <strong style="color:#1B4332;">$345 to $456</strong></p>
+  <table>
+    <thead><tr><th style="width:40pt;">Item</th><th>What It Is</th><th style="text-align:right; width:80pt;">Cost</th></tr></thead>
+    <tbody>
+      <tr><td><svg viewBox="0 0 30 30" style="width:22pt;"><path d="M5,8 L3,26 L27,26 L25,8 Z" fill="#F0EDE6" stroke="#2D6A4F" stroke-width="1.5"/><rect x="4" y="6" width="22" height="3" rx="1" fill="#4A4A45"/><circle cx="15" cy="3" r="3" fill="#22C55E" fill-opacity="0.5"/></svg></td><td><strong>4 DWC Buckets</strong> — 5-gallon buckets with net pot lids</td><td class="price">$50 to $80</td></tr>
+      <tr><td><svg viewBox="0 0 30 30" style="width:22pt;"><rect x="3" y="6" width="24" height="6" rx="2" fill="#1A1A1A"/><circle cx="9" cy="9" r="1.5" fill="#FDE68A"/><circle cx="15" cy="9" r="1.5" fill="#FDE68A"/><circle cx="21" cy="9" r="1.5" fill="#FDE68A"/></svg></td><td><strong>LED Grow Light</strong> — Spider Farmer SF2000, covers 2x4 ft</td><td class="price">$140 to $150</td></tr>
+      <tr><td><svg viewBox="0 0 30 30" style="width:22pt;"><rect x="3" y="6" width="7" height="18" rx="2" fill="#E8663D" fill-opacity="0.3" stroke="#E8663D" stroke-width="0.8"/><rect x="12" y="6" width="7" height="18" rx="2" fill="#22C55E" fill-opacity="0.3" stroke="#22C55E" stroke-width="0.8"/><rect x="21" y="6" width="7" height="18" rx="2" fill="#3B82F6" fill-opacity="0.3" stroke="#3B82F6" stroke-width="0.8"/></svg></td><td><strong>Nutrients</strong> — GH Flora Trio (Micro, Gro, Bloom)</td><td class="price">$30 to $40</td></tr>
+      <tr><td><svg viewBox="0 0 30 30" style="width:22pt;"><rect x="9" y="4" width="12" height="22" rx="3" fill="white" stroke="#2D6A4F" stroke-width="1.5"/><rect x="11" y="8" width="8" height="6" rx="1" fill="#D8F3DC"/><text x="15" y="13" text-anchor="middle" font-size="4" fill="#22C55E" font-weight="bold">pH</text></svg></td><td><strong>pH + TDS Meters</strong> — VIVOSUN combo kit</td><td class="price">$12 to $20</td></tr>
+      <tr><td><svg viewBox="0 0 30 30" style="width:22pt;"><rect x="8" y="4" width="14" height="22" rx="3" fill="white" stroke="#E8663D" stroke-width="1.5"/><text x="15" y="18" text-anchor="middle" font-size="5" fill="#E8663D" font-weight="bold">pH</text></svg></td><td><strong>pH Up/Down</strong> — GH pH Control Kit</td><td class="price">$12 to $18</td></tr>
+      <tr><td><svg viewBox="0 0 30 30" style="width:22pt;"><circle cx="10" cy="12" r="5" fill="#C49A2A" fill-opacity="0.5" stroke="#C49A2A" stroke-width="0.7"/><circle cx="20" cy="10" r="6" fill="#C49A2A" fill-opacity="0.4" stroke="#C49A2A" stroke-width="0.7"/><circle cx="14" cy="21" r="5" fill="#C49A2A" fill-opacity="0.5" stroke="#C49A2A" stroke-width="0.7"/></svg></td><td><strong>LECA Clay Pebbles</strong> — Growing medium, 10L bag</td><td class="price">$15 to $20</td></tr>
+      <tr><td><svg viewBox="0 0 30 30" style="width:22pt;"><ellipse cx="10" cy="14" rx="4" ry="6" fill="#2D6A4F" fill-opacity="0.5" transform="rotate(-15 10 14)"/><ellipse cx="20" cy="12" rx="3.5" ry="5.5" fill="#40916C" fill-opacity="0.5" transform="rotate(10 20 12)"/><path d="M10,8 Q10,3 14,2" fill="none" stroke="#22C55E" stroke-width="0.8"/></svg></td><td><strong>Seeds</strong> — Lettuce, basil, callaloo, culantro, scotch bonnet, thyme</td><td class="price">$15 to $25</td></tr>
+      <tr><td><svg viewBox="0 0 30 30" style="width:22pt;"><rect x="5" y="6" width="20" height="18" rx="3" fill="white" stroke="#2D6A4F" stroke-width="1.5"/><text x="15" y="17" text-anchor="middle" font-size="4" fill="#2D6A4F" font-weight="bold">AIR</text></svg></td><td><strong>Air Pump + Stones + Tubing</strong> — Keeps water oxygenated</td><td class="price">$33 to $48</td></tr>
+      <tr><td><svg viewBox="0 0 30 30" style="width:22pt;"><circle cx="15" cy="15" r="11" fill="white" stroke="#C49A2A" stroke-width="1.5"/><path d="M15,15 L15,7" stroke="#2D6A4F" stroke-width="1.5"/><circle cx="15" cy="15" r="2" fill="#2D6A4F"/></svg></td><td><strong>Timer + Net Pots + Fan + Misc</strong> — Small accessories</td><td class="price">$43 to $58</td></tr>
+    </tbody>
+    <tr class="total-row"><td></td><td><strong>TOTAL STARTUP</strong></td><td class="price" style="font-size:16pt;">$345 to $456</td></tr>
+  </table>
+</div>
+
+<!-- PAGE 4: SETUP STEPS 1-3 -->
+<div class="page">
+  <h2>Setup Guide — Steps 1 to 3</h2>
+  <div style="margin-bottom:20pt;">
+    <div class="flex-center" style="margin-bottom:8pt;"><span class="step-num">1</span><h3 style="margin:0;">Pick a Spot in Your Home</h3></div>
+    <div class="center" style="margin:10pt 0;">
+      <svg viewBox="0 0 300 140" style="width:280pt;">
+        <rect x="30" y="100" width="240" height="10" rx="3" fill="#D8F3DC"/>
+        <line x1="30" y1="20" x2="30" y2="110" stroke="#2D6A4F" stroke-width="3"/>
+        <line x1="30" y1="110" x2="270" y2="110" stroke="#2D6A4F" stroke-width="3"/>
+        <rect x="42" y="55" width="22" height="30" rx="4" fill="white" stroke="#4A4A45" stroke-width="2"/>
+        <circle cx="49" cy="67" r="2.5" fill="#4A4A45"/><circle cx="59" cy="67" r="2.5" fill="#4A4A45"/>
+        <rect x="50" y="75" width="6" height="6" rx="1.5" fill="#4A4A45"/>
+        <line x1="90" y1="106" x2="210" y2="106" stroke="#C49A2A" stroke-width="2"/>
+        <text x="150" y="103" text-anchor="middle" font-size="13" fill="#C49A2A" font-weight="bold">4 feet</text>
+        <line x1="240" y1="45" x2="240" y2="106" stroke="#C49A2A" stroke-width="2"/>
+        <text x="255" y="78" font-size="13" fill="#C49A2A" font-weight="bold">2 ft</text>
+        <rect x="80" y="35" width="120" height="65" rx="6" fill="#2D6A4F" fill-opacity="0.06" stroke="#2D6A4F" stroke-width="1.5" stroke-dasharray="6 4"/>
+        <text x="140" y="72" text-anchor="middle" font-size="11" fill="#2D6A4F" font-weight="bold">YOUR GROW AREA</text>
+        <rect x="195" y="25" width="12" height="35" rx="4" fill="white" stroke="#E8663D" stroke-width="1.5"/>
+        <circle cx="201" cy="55" r="5" fill="#E8663D"/>
+        <text x="201" y="68" text-anchor="middle" font-size="8" fill="#E8663D" font-weight="bold">65 to 80 F</text>
+      </svg>
+    </div>
+    <div class="tip">Spare room, basement, or large closet. Needs an electrical outlet nearby.</div>
+  </div>
+  <div style="margin-bottom:20pt;">
+    <div class="flex-center" style="margin-bottom:8pt;"><span class="step-num">2</span><h3 style="margin:0;">Get Your DWC Bucket System</h3></div>
+    <div class="center" style="margin:10pt 0;">
+      <svg viewBox="0 0 300 180" style="width:280pt;">
+        <path d="M60,40 L45,155 L255,155 L240,40 Z" fill="#F0EDE6" stroke="#2D6A4F" stroke-width="2.5"/>
+        <rect x="50" y="35" width="200" height="8" rx="3" fill="#4A4A45"/>
+        <path d="M120,35 L115,68 L185,68 L180,35" fill="white" stroke="#2D6A4F" stroke-width="2"/>
+        <path d="M52,88 L48,153 L252,153 L248,88 Z" fill="#3B82F6" fill-opacity="0.1"/>
+        <path d="M52,88 Q100,96 150,88 Q200,80 248,88" fill="none" stroke="#3B82F6" stroke-width="2"/>
+        <circle cx="135" cy="50" r="6" fill="#C49A2A" fill-opacity="0.5" stroke="#C49A2A" stroke-width="1"/>
+        <circle cx="150" cy="47" r="7" fill="#C49A2A" fill-opacity="0.5" stroke="#C49A2A" stroke-width="1"/>
+        <circle cx="165" cy="50" r="6" fill="#C49A2A" fill-opacity="0.5" stroke="#C49A2A" stroke-width="1"/>
+        <line x1="150" y1="35" x2="150" y2="15" stroke="#2D6A4F" stroke-width="3"/>
+        <ellipse cx="138" cy="10" rx="16" ry="10" fill="#22C55E" fill-opacity="0.6"/>
+        <ellipse cx="162" cy="10" rx="16" ry="10" fill="#22C55E" fill-opacity="0.6"/>
+        <path d="M135,68 Q130,105 125,135" fill="none" stroke="#8B6F47" stroke-width="1.5"/>
+        <path d="M150,68 Q150,105 150,140" fill="none" stroke="#8B6F47" stroke-width="2"/>
+        <path d="M165,68 Q170,105 175,135" fill="none" stroke="#8B6F47" stroke-width="1.5"/>
+        <rect x="120" y="140" width="60" height="8" rx="4" fill="#A8A8A0" stroke="#6B6B65" stroke-width="1"/>
+        <circle cx="140" cy="128" r="4" fill="#3B82F6" fill-opacity="0.2" stroke="#3B82F6" stroke-width="0.5"/>
+        <circle cx="155" cy="120" r="5" fill="#3B82F6" fill-opacity="0.15" stroke="#3B82F6" stroke-width="0.5"/>
+        <text x="265" y="93" font-size="10" fill="#3B82F6" font-weight="bold">Water</text>
+        <text x="265" y="145" font-size="10" fill="#6B6B65" font-weight="bold">Air stone</text>
+        <text x="192" y="55" font-size="10" fill="#C49A2A" font-weight="bold">LECA</text>
+        <text x="185" y="115" font-size="10" fill="#8B6F47" font-weight="bold">Roots</text>
+        <text x="150" y="175" text-anchor="middle" font-size="10" fill="#2D6A4F" font-weight="bold">Roots sit in oxygenated nutrient water — about $25 per bucket</text>
+      </svg>
+    </div>
+  </div>
+  <div>
+    <div class="flex-center" style="margin-bottom:8pt;"><span class="step-num">3</span><h3 style="margin:0;">Choose Your Growing Media</h3></div>
+    <div class="grid-2" style="margin-top:8pt;">
+      <div class="card card-green center">
+        <svg viewBox="0 0 80 50" style="width:70pt; margin:0 auto 6pt;"><circle cx="25" cy="18" r="10" fill="#C49A2A" fill-opacity="0.5" stroke="#C49A2A" stroke-width="1"/><circle cx="50" cy="16" r="12" fill="#C49A2A" fill-opacity="0.4" stroke="#C49A2A" stroke-width="1"/><circle cx="35" cy="36" r="10" fill="#C49A2A" fill-opacity="0.5" stroke="#C49A2A" stroke-width="1"/><circle cx="60" cy="34" r="8" fill="#C49A2A" fill-opacity="0.45" stroke="#C49A2A" stroke-width="1"/></svg>
+        <h3 style="font-size:14pt;">LECA Clay Pebbles</h3>
+        <p class="muted" style="font-size:11pt;">Smooth, lightweight, reusable<br><strong class="green">Best for beginners</strong></p>
+      </div>
+      <div class="card center">
+        <svg viewBox="0 0 80 50" style="width:70pt; margin:0 auto 6pt;"><path d="M20,14 L14,24 L18,32 L28,28 L32,18 Z" fill="#8B6F47" fill-opacity="0.5" stroke="#8B6F47" stroke-width="0.8"/><path d="M40,10 L34,18 L38,26 L50,24 L54,14 L48,8 Z" fill="#8B6F47" fill-opacity="0.45" stroke="#8B6F47" stroke-width="0.8"/><path d="M24,32 L18,40 L26,46 L36,42 L32,34 Z" fill="#8B6F47" fill-opacity="0.5" stroke="#8B6F47" stroke-width="0.8"/><path d="M48,30 L42,38 L50,44 L58,40 L56,32 Z" fill="#8B6F47" fill-opacity="0.45" stroke="#8B6F47" stroke-width="0.8"/></svg>
+        <h3 style="font-size:14pt;">Lava Rock</h3>
+        <p class="muted" style="font-size:11pt;">Cheaper but heavier, sharp edges<br><strong class="gold">Budget option — rinse well first</strong></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PAGE 5: SETUP STEPS 4-5 -->
+<div class="page">
+  <h2>Setup Guide — Steps 4 to 5</h2>
+  <div style="margin-bottom:24pt;">
+    <div class="flex-center" style="margin-bottom:8pt;"><span class="step-num">4</span><h3 style="margin:0;">Set Up Your Grow Light</h3></div>
+    <div class="center" style="margin:10pt 0;">
+      <svg viewBox="0 0 300 150" style="width:280pt;">
+        <line x1="80" y1="10" x2="80" y2="28" stroke="#A8A8A0" stroke-width="2"/>
+        <line x1="220" y1="10" x2="220" y2="28" stroke="#A8A8A0" stroke-width="2"/>
+        <rect x="60" y="28" width="180" height="14" rx="4" fill="#1A1A1A" stroke="#4A4A45" stroke-width="2"/>
+        <circle cx="80" cy="35" r="3" fill="#FDE68A"/><circle cx="110" cy="35" r="3" fill="#FDE68A"/><circle cx="140" cy="35" r="3" fill="#FDE68A"/><circle cx="170" cy="35" r="3" fill="#FDE68A"/><circle cx="200" cy="35" r="3" fill="#FDE68A"/><circle cx="220" cy="35" r="3" fill="#FDE68A"/>
+        <path d="M70,42 L40,110" stroke="#FDE68A" stroke-width="0.8" stroke-dasharray="4 4"/>
+        <path d="M150,42 L150,110" stroke="#FDE68A" stroke-width="0.8" stroke-dasharray="4 4"/>
+        <path d="M230,42 L260,110" stroke="#FDE68A" stroke-width="0.8" stroke-dasharray="4 4"/>
+        <path d="M60,42 L30,115 L270,115 L240,42 Z" fill="#FDE68A" fill-opacity="0.04"/>
+        <ellipse cx="80" cy="118" rx="20" ry="10" fill="#22C55E" fill-opacity="0.4"/>
+        <ellipse cx="150" cy="116" rx="22" ry="12" fill="#22C55E" fill-opacity="0.5"/>
+        <ellipse cx="220" cy="118" rx="20" ry="10" fill="#22C55E" fill-opacity="0.4"/>
+        <line x1="268" y1="42" x2="268" y2="115" stroke="#C49A2A" stroke-width="1.5"/>
+        <text x="280" y="82" font-size="11" fill="#C49A2A" font-weight="bold">18 to 24 in</text>
+        <rect x="10" y="125" width="70" height="20" rx="4" fill="white" stroke="#2D6A4F" stroke-width="1.5"/>
+        <text x="45" y="134" text-anchor="middle" font-size="7" fill="#2D6A4F" font-weight="bold">TIMER</text>
+        <text x="45" y="142" text-anchor="middle" font-size="7" fill="#22C55E" font-weight="bold">16h ON / 8h OFF</text>
+      </svg>
+    </div>
+    <div class="tip">Hang 18 to 24 inches above plants. Timer runs lights automatically — set it once.</div>
+  </div>
+  <div>
+    <div class="flex-center" style="margin-bottom:8pt;"><span class="step-num">5</span><h3 style="margin:0;">Mix Nutrients and Plant</h3></div>
+    <div class="center" style="margin:10pt 0;">
+      <svg viewBox="0 0 340 120" style="width:320pt;">
+        <rect x="10" y="25" width="45" height="72" rx="6" fill="#E8663D" fill-opacity="0.2" stroke="#E8663D" stroke-width="2"/>
+        <rect x="18" y="14" width="18" height="14" rx="3" fill="#E8663D" fill-opacity="0.3" stroke="#E8663D" stroke-width="1.5"/>
+        <text x="32" y="56" text-anchor="middle" font-size="8" fill="#E8663D" font-weight="bold">MICRO</text>
+        <text x="32" y="70" text-anchor="middle" font-size="7" fill="#4A4A45">2.5 mL</text>
+        <circle cx="32" cy="6" r="12" fill="#22C55E" stroke="#22C55E" stroke-width="2"/>
+        <text x="32" y="10" text-anchor="middle" font-size="12" fill="white" font-weight="bold">1</text>
+        <text x="70" y="62" font-size="16" fill="#C49A2A" font-weight="bold">&#8594;</text>
+        <rect x="85" y="25" width="45" height="72" rx="6" fill="#22C55E" fill-opacity="0.2" stroke="#22C55E" stroke-width="2"/>
+        <rect x="93" y="14" width="18" height="14" rx="3" fill="#22C55E" fill-opacity="0.3" stroke="#22C55E" stroke-width="1.5"/>
+        <text x="107" y="56" text-anchor="middle" font-size="8" fill="#22C55E" font-weight="bold">GRO</text>
+        <text x="107" y="70" text-anchor="middle" font-size="7" fill="#4A4A45">2.5 mL</text>
+        <circle cx="107" cy="6" r="12" fill="#22C55E" stroke="#22C55E" stroke-width="2"/>
+        <text x="107" y="10" text-anchor="middle" font-size="12" fill="white" font-weight="bold">2</text>
+        <text x="145" y="62" font-size="16" fill="#C49A2A" font-weight="bold">&#8594;</text>
+        <rect x="160" y="25" width="45" height="72" rx="6" fill="#3B82F6" fill-opacity="0.2" stroke="#3B82F6" stroke-width="2"/>
+        <rect x="168" y="14" width="18" height="14" rx="3" fill="#3B82F6" fill-opacity="0.3" stroke="#3B82F6" stroke-width="1.5"/>
+        <text x="182" y="56" text-anchor="middle" font-size="8" fill="#3B82F6" font-weight="bold">BLOOM</text>
+        <text x="182" y="70" text-anchor="middle" font-size="7" fill="#4A4A45">2.5 mL</text>
+        <circle cx="182" cy="6" r="12" fill="#22C55E" stroke="#22C55E" stroke-width="2"/>
+        <text x="182" y="10" text-anchor="middle" font-size="12" fill="white" font-weight="bold">3</text>
+        <rect x="225" y="22" width="105" height="22" rx="6" fill="#F0EDE6" stroke="#E8E5DD" stroke-width="1.5"/>
+        <rect x="252" y="22" width="42" height="22" fill="#22C55E" fill-opacity="0.15"/>
+        <text x="233" y="37" font-size="7" fill="#DC2626">4.0</text>
+        <text x="262" y="37" font-size="9" fill="#22C55E" font-weight="bold">5.5 to 6.5</text>
+        <text x="322" y="37" font-size="7" fill="#6B6B65">8.0</text>
+        <text x="277" y="58" text-anchor="middle" font-size="10" fill="#22C55E" font-weight="bold">pH Sweet Spot</text>
+        <text x="277" y="78" text-anchor="middle" font-size="9" fill="#4A4A45">Check pH weekly</text>
+        <text x="277" y="92" text-anchor="middle" font-size="9" fill="#4A4A45">Add pH Up or Down</text>
+        <text x="277" y="106" text-anchor="middle" font-size="9" fill="#4A4A45">to stay in green zone</text>
+      </svg>
+    </div>
+    <div class="tip">Always add Micro FIRST. Order matters for nutrient stability.</div>
+  </div>
+</div>
+
+<!-- PAGE 6: WHAT TO GROW -->
+<div class="page">
+  <h2>What to Grow</h2>
+  <p style="margin-bottom:12pt;">Caribbean crops and easy starters that thrive in hydroponic systems</p>
+  <div class="grid-3">
+    <div class="card card-green center"><div style="font-size:28pt;">&#129367;</div><h3>Lettuce</h3><p class="muted" style="font-size:11pt;">30 to 45 days<br>Very Easy<br><strong class="green">Best Starter</strong></p></div>
+    <div class="card card-green center"><div style="font-size:28pt;">&#127807;</div><h3>Basil</h3><p class="muted" style="font-size:11pt;">28 to 35 days<br>Easy<br><strong class="green">Save 67%</strong></p></div>
+    <div class="card card-coral center"><div style="font-size:28pt;">&#129388;</div><h3>Callaloo</h3><p class="muted" style="font-size:11pt;">20 to 45 days<br>Easy-Medium<br><strong class="coral">Save 65%</strong></p></div>
+    <div class="card card-coral center"><div style="font-size:28pt;">&#127807;</div><h3>Culantro</h3><p class="muted" style="font-size:11pt;">75 to 90 days<br>Medium<br><strong class="coral">Save 73%</strong></p></div>
+    <div class="card card-coral center"><div style="font-size:28pt;">&#127798;&#65039;</div><h3>Scotch Bonnet</h3><p class="muted" style="font-size:11pt;">90 to 150 days<br>Medium<br><strong class="coral">Save 74%</strong></p></div>
+    <div class="card card-coral center"><div style="font-size:28pt;">&#127793;</div><h3>Thyme</h3><p class="muted" style="font-size:11pt;">30 to 60 days<br>Easy (cuttings)<br><strong class="coral">Save 75%</strong></p></div>
+    <div class="card card-green center"><div style="font-size:28pt;">&#129477;</div><h3>Green Onions</h3><p class="muted" style="font-size:11pt;">21 to 28 days<br>Very Easy<br><strong class="green">Save 63%</strong></p></div>
+    <div class="card card-gold center"><div style="font-size:28pt;">&#127806;</div><h3>Lemongrass</h3><p class="muted" style="font-size:11pt;">60 to 90 days<br>Easy<br><strong class="gold">Save 55%</strong></p></div>
+    <div class="card card-green center"><div style="font-size:28pt;">&#127807;</div><h3>Mint</h3><p class="muted" style="font-size:11pt;">21 to 30 days<br>Very Easy<br><strong class="green">Save 60%</strong></p></div>
+  </div>
+  <div style="margin-top:14pt; display:flex; gap:12pt;">
+    <span class="badge badge-green">Green = Starter — Grow First</span>
+    <span class="badge badge-coral">Orange = Caribbean Essential</span>
+    <span class="badge badge-gold">Gold = Caribbean Addition</span>
+  </div>
+</div>
+
+<!-- PAGE 7: WEEKLY CARE CHECKLIST -->
+<div class="page">
+  <h2>Weekly Care Checklist</h2>
+  <p style="margin-bottom:8pt;">Cut this page out and hang it on your wall near your grow area</p>
+  <div class="card card-green" style="margin-bottom:14pt;">
+    <h3 style="display:flex; align-items:center; gap:8pt;"><svg viewBox="0 0 24 24" style="width:20pt;"><circle cx="12" cy="12" r="10" fill="#22C55E" fill-opacity="0.2" stroke="#22C55E" stroke-width="2"/><text x="12" y="16" text-anchor="middle" font-size="10" fill="#22C55E" font-weight="bold">D</text></svg>DAILY — 2 to 3 minutes</h3>
+    <div class="check-item"><div class="check-box"></div><span>Check water level — top off if low</span></div>
+    <div class="check-item"><div class="check-box"></div><span>Test pH — target 5.8 to 6.2</span></div>
+    <div class="check-item"><div class="check-box"></div><span>Look at plants for wilting or bugs</span></div>
+    <div class="check-item"><div class="check-box"></div><span>Make sure light timer is working</span></div>
+  </div>
+  <div class="card" style="border-color:#3B82F6; margin-bottom:14pt;">
+    <h3 style="display:flex; align-items:center; gap:8pt;"><svg viewBox="0 0 24 24" style="width:20pt;"><circle cx="12" cy="12" r="10" fill="#3B82F6" fill-opacity="0.2" stroke="#3B82F6" stroke-width="2"/><text x="12" y="16" text-anchor="middle" font-size="10" fill="#3B82F6" font-weight="bold">W</text></svg>WEEKLY — 10 to 15 minutes</h3>
+    <div class="check-item"><div class="check-box"></div><span>Measure nutrient strength (EC/TDS meter)</span></div>
+    <div class="check-item"><div class="check-box"></div><span>Clean any green slime (algae)</span></div>
+    <div class="check-item"><div class="check-box"></div><span>Check roots — white is healthy, brown is bad</span></div>
+    <div class="check-item"><div class="check-box"></div><span>Make sure air pump is bubbling in each bucket</span></div>
+    <div class="check-item"><div class="check-box"></div><span>Harvest any crops that are ready</span></div>
+  </div>
+  <div class="card card-gold" style="margin-bottom:14pt;">
+    <h3 style="display:flex; align-items:center; gap:8pt;"><svg viewBox="0 0 24 24" style="width:20pt;"><circle cx="12" cy="12" r="10" fill="#C49A2A" fill-opacity="0.2" stroke="#C49A2A" stroke-width="2"/><text x="12" y="16" text-anchor="middle" font-size="8" fill="#C49A2A" font-weight="bold">2W</text></svg>EVERY 2 WEEKS — 20 to 30 minutes</h3>
+    <div class="check-item"><div class="check-box"></div><span>Drain all buckets and refill with fresh nutrient water</span></div>
+    <div class="check-item"><div class="check-box"></div><span>Scrub inside of buckets clean</span></div>
+    <div class="check-item"><div class="check-box"></div><span>Trim tangled roots if needed</span></div>
+    <div class="check-item"><div class="check-box"></div><span>Check all tubes and connections</span></div>
+    <div class="check-item"><div class="check-box"></div><span>Reminder: Add Micro FIRST, stir, then Gro, stir, then Bloom</span></div>
+  </div>
+  <div class="card card-coral">
+    <h3 style="display:flex; align-items:center; gap:8pt;"><svg viewBox="0 0 24 24" style="width:20pt;"><circle cx="12" cy="12" r="10" fill="#E8663D" fill-opacity="0.2" stroke="#E8663D" stroke-width="2"/><text x="12" y="16" text-anchor="middle" font-size="10" fill="#E8663D" font-weight="bold">M</text></svg>MONTHLY — 30 minutes</h3>
+    <div class="check-item"><div class="check-box"></div><span>Calibrate your pH and EC meters</span></div>
+    <div class="check-item"><div class="check-box"></div><span>Check air stones — replace if clogged</span></div>
+    <div class="check-item"><div class="check-box"></div><span>Raise light as plants grow taller</span></div>
+    <div class="check-item"><div class="check-box"></div><span>Clean fan blades</span></div>
+    <div class="check-item"><div class="check-box"></div><span>Check supplies — reorder before running out</span></div>
+  </div>
+</div>
+
+<!-- PAGE 8: TROUBLESHOOTING -->
+<div class="page">
+  <h2>Troubleshooting — Quick Fixes</h2>
+  <p style="margin-bottom:12pt;">If something looks wrong, find it below and follow the fix</p>
+  <div class="symptom-card">
+    <svg viewBox="0 0 48 48" style="width:36pt; flex-shrink:0;"><ellipse cx="24" cy="20" rx="14" ry="16" fill="#FDE68A" stroke="#C49A2A" stroke-width="1.5"/><line x1="24" y1="20" x2="24" y2="36" stroke="#8B6F47" stroke-width="1.5"/></svg>
+    <div><strong>Yellow leaves on bottom</strong><br><span class="muted">Cause: Not enough nutrients</span><div class="fix"><strong>Fix:</strong> Add more nutrients or check pH</div></div>
+  </div>
+  <div class="symptom-card">
+    <svg viewBox="0 0 48 48" style="width:36pt; flex-shrink:0;"><ellipse cx="24" cy="20" rx="14" ry="16" fill="#22C55E" fill-opacity="0.4" stroke="#2D6A4F" stroke-width="1.5"/><path d="M14,10 Q12,6 14,4" fill="#8B6F47" fill-opacity="0.7"/><path d="M34,10 Q36,6 34,4" fill="#8B6F47" fill-opacity="0.7"/><line x1="24" y1="20" x2="24" y2="36" stroke="#8B6F47" stroke-width="1.5"/></svg>
+    <div><strong>Brown tips on leaves</strong><br><span class="muted">Cause: Too much nutrients (burn)</span><div class="fix"><strong>Fix:</strong> Add plain water to dilute</div></div>
+  </div>
+  <div class="symptom-card">
+    <svg viewBox="0 0 48 48" style="width:36pt; flex-shrink:0;"><line x1="24" y1="24" x2="24" y2="40" stroke="#8B6F47" stroke-width="1.5"/><path d="M14,22 Q18,12 24,18 Q30,24 24,22" fill="#22C55E" fill-opacity="0.3" stroke="#2D6A4F" stroke-width="1"/><path d="M14,22 Q12,26 14,28" fill="none" stroke="#2D6A4F" stroke-width="0.8"/><path d="M34,22 Q36,26 34,28" fill="none" stroke="#2D6A4F" stroke-width="0.8"/></svg>
+    <div><strong>Plant drooping even with water</strong><br><span class="muted">Cause: Root rot — roots are brown and slimy</span><div class="fix"><strong>Fix:</strong> Check roots. Keep water temp below 75 F</div></div>
+  </div>
+  <div class="symptom-card">
+    <svg viewBox="0 0 48 48" style="width:36pt; flex-shrink:0;"><line x1="24" y1="28" x2="24" y2="40" stroke="#8B6F47" stroke-width="1.5"/><circle cx="24" cy="22" r="6" fill="#22C55E" fill-opacity="0.3" stroke="#2D6A4F" stroke-width="1.5"/><text x="24" y="25" text-anchor="middle" font-size="8" fill="#DC2626" font-weight="bold">?</text></svg>
+    <div><strong>Plant growing very slow</strong><br><span class="muted">Cause: pH is wrong</span><div class="fix"><strong>Fix:</strong> Adjust pH to 5.8 to 6.2 range</div></div>
+  </div>
+  <div class="symptom-card">
+    <svg viewBox="0 0 48 48" style="width:36pt; flex-shrink:0;"><rect x="8" y="12" width="32" height="26" rx="4" fill="#F0EDE6" stroke="#2D6A4F" stroke-width="1.5"/><rect x="10" y="24" width="28" height="12" rx="2" fill="#22C55E" fill-opacity="0.2"/><circle cx="16" cy="28" r="3" fill="#22C55E" fill-opacity="0.3"/><circle cx="28" cy="30" r="4" fill="#22C55E" fill-opacity="0.2"/></svg>
+    <div><strong>Green slime in bucket</strong><br><span class="muted">Cause: Light is getting into the water</span><div class="fix"><strong>Fix:</strong> Cover any gaps. Use dark/opaque buckets</div></div>
+  </div>
+  <div class="symptom-card">
+    <svg viewBox="0 0 48 48" style="width:36pt; flex-shrink:0;"><circle cx="16" cy="14" r="2.5" fill="#4A4A45"/><circle cx="30" cy="18" r="2" fill="#4A4A45"/><circle cx="24" cy="28" r="1.5" fill="#4A4A45"/><rect x="8" y="34" width="16" height="8" rx="1.5" fill="#FDE68A" stroke="#C49A2A" stroke-width="1"/><text x="16" y="40" text-anchor="middle" font-size="4.5" fill="#C49A2A" font-weight="bold">TRAP</text></svg>
+    <div><strong>Tiny flies buzzing around</strong><br><span class="muted">Cause: Fungus gnats</span><div class="fix"><strong>Fix:</strong> Keep top of clay pebbles dry. Use yellow sticky traps</div></div>
+  </div>
+  <div class="symptom-card">
+    <svg viewBox="0 0 48 48" style="width:36pt; flex-shrink:0;"><line x1="24" y1="12" x2="24" y2="40" stroke="#8B6F47" stroke-width="1.5"/><circle cx="22" cy="8" r="5" fill="#22C55E" fill-opacity="0.4" stroke="#2D6A4F" stroke-width="1"/><text x="10" y="24" font-size="6" fill="#C49A2A" font-weight="bold">LOW</text><text x="8" y="32" font-size="6" fill="#C49A2A" font-weight="bold">LIGHT</text></svg>
+    <div><strong>Plant is tall and skinny (leggy)</strong><br><span class="muted">Cause: Not enough light</span><div class="fix"><strong>Fix:</strong> Lower the light closer to plants</div></div>
+  </div>
+  <div class="symptom-card">
+    <svg viewBox="0 0 48 48" style="width:36pt; flex-shrink:0;"><line x1="24" y1="24" x2="24" y2="40" stroke="#8B6F47" stroke-width="1.5"/><path d="M12,18 Q14,8 24,14 Q34,20 36,10" fill="#22C55E" fill-opacity="0.3" stroke="#2D6A4F" stroke-width="1.5"/><path d="M12,18 Q10,22 12,24" fill="none" stroke="#2D6A4F" stroke-width="1"/></svg>
+    <div><strong>Leaf edges curling up</strong><br><span class="muted">Cause: Too hot or too much wind</span><div class="fix"><strong>Fix:</strong> Move fan away. Keep temp 65 to 80 F</div></div>
+  </div>
+  <div style="margin-top:14pt; text-align:center; padding:12pt; border:2px solid #22C55E; border-radius:12pt; background:#D8F3DC33;">
+    <p style="font-size:16pt; font-weight:700; color:#1B4332; margin:0;">Healthy roots are WHITE</p>
+    <p style="font-size:14pt; color:#4A4A45; margin:4pt 0 0;">If roots are brown or slimy, that is the first thing to fix</p>
+  </div>
+</div>
+
+<!-- PAGE 9: BACK COVER -->
+<div class="page" style="display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center;">
+  <svg viewBox="0 0 120 120" style="width:100pt; margin-bottom:16pt;">
+    <circle cx="60" cy="60" r="55" fill="#D8F3DC" stroke="#22C55E" stroke-width="3"/>
+    <line x1="60" y1="65" x2="60" y2="40" stroke="#2D6A4F" stroke-width="4"/>
+    <ellipse cx="48" cy="35" rx="14" ry="10" fill="#22C55E" fill-opacity="0.6"/>
+    <ellipse cx="72" cy="35" rx="14" ry="10" fill="#22C55E" fill-opacity="0.6"/>
+    <ellipse cx="60" cy="28" rx="12" ry="9" fill="#40916C" fill-opacity="0.6"/>
+    <path d="M50,65 Q45,80 42,95" fill="none" stroke="#8B6F47" stroke-width="1.5"/>
+    <path d="M60,65 Q60,82 60,98" fill="none" stroke="#8B6F47" stroke-width="2"/>
+    <path d="M70,65 Q75,80 78,95" fill="none" stroke="#8B6F47" stroke-width="1.5"/>
+  </svg>
+  <p class="subtitle" style="margin-bottom:6pt;">AISIM Community Initiative</p>
+  <h1 style="font-size:30pt; margin-bottom:12pt;">Growing Food,<br>Growing Community</h1>
+  <p style="font-size:14pt; color:#4A4A45; max-width:350pt; margin-bottom:20pt;">This guide was created for the families and community members of West Springfield, MA. Designed to be easy to follow for everyone — including elderly family and people with disabilities.</p>
+  <div style="margin-top:12pt; padding:16pt; border:2px solid #E8E5DD; border-radius:12pt; max-width:300pt;">
+    <p style="font-size:12pt; color:#6B6B65; margin-bottom:6pt;">Visit the full interactive guide online:</p>
+    <p style="font-size:16pt; font-weight:700; color:#1B4332;">aisim-community.vercel.app</p>
+  </div>
+  <p style="margin-top:24pt; font-size:11pt; color:#8A8A82;">Powered by AI Sim Intelligence — Recipe Labs<br>Pan Road Catering — West Springfield, MA</p>
+</div>
+
+</body>
+</html>
